@@ -1,3 +1,4 @@
+import iconsUrl from '../assets/icons/icons.svg?url'
 import '../css/reset.css'
 import '../css/index.css'
 import './header.js'
@@ -11,6 +12,7 @@ import location from '../partials/location.html?raw'
 import footer from '../partials/footer.html?raw'
 import bookModal from '../partials/book-modal.html?raw'
 import contactModal from '../partials/contact-modal.html?raw'
+
 document.querySelector('#app').innerHTML = `
   ${header}
   ${hero}
@@ -23,3 +25,7 @@ document.querySelector('#app').innerHTML = `
   ${bookModal}
   ${contactModal}
 `
+document.querySelectorAll('use[href^="/icons.svg#"]').forEach(icon => {
+  const symbol = icon.getAttribute('href').split('#')[1]
+  icon.setAttribute('href', `${iconsUrl}#${symbol}`)
+})
