@@ -2,6 +2,7 @@ import iconsUrl from '../assets/icons/icons.svg?url'
 import '../css/reset.css'
 import '../css/index.css'
 import './header.js'
+
 import header from '../partials/header.html?raw'
 import hero from '../partials/hero.html?raw'
 import books from '../partials/books.html?raw'
@@ -13,8 +14,10 @@ import footer from '../partials/footer.html?raw'
 import bookModal from '../partials/book-modal.html?raw'
 import contactModal from '../partials/contact-modal.html?raw'
 
+const headerWithIcons = header.replaceAll('/icons.svg', iconsUrl)
+
 document.querySelector('#app').innerHTML = `
-  ${header}
+  ${headerWithIcons}
   ${hero}
   ${books}
   ${feedbacks}
@@ -25,7 +28,3 @@ document.querySelector('#app').innerHTML = `
   ${bookModal}
   ${contactModal}
 `
-document.querySelectorAll('use[href^="/icons.svg#"]').forEach(icon => {
-  const symbol = icon.getAttribute('href').split('#')[1]
-  icon.setAttribute('href', `${iconsUrl}#${symbol}`)
-})
