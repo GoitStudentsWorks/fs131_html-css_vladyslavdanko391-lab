@@ -1,5 +1,6 @@
 import '../css/reset.css'
 import '../css/index.css'
+import './css/header.css'
 import './js/header.js'
 import header from '../partials/header.html?raw'
 import hero from '../partials/hero.html?raw'
