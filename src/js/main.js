@@ -14,17 +14,18 @@ import footer from '../partials/footer.html?raw'
 import bookModal from '../partials/book-modal.html?raw'
 import contactModal from '../partials/contact-modal.html?raw'
 
-const headerWithIcons = header.replaceAll('/icons.svg', iconsUrl)
+const withIcons = (html) => html.replaceAll('/icons.svg', iconsUrl)
 
 document.querySelector('#app').innerHTML = `
-  ${headerWithIcons}
-  ${hero}
-  ${books}
-  ${feedbacks}
-  ${events}
-  ${article}
-  ${location}
-  ${footer}
-  ${bookModal}
-  ${contactModal}
+  ${withIcons(header)}
+  ${withIcons(hero)}
+  ${withIcons(books)}
+  ${withIcons(feedbacks)}
+  ${withIcons(events)}
+  ${withIcons(article)}
+  ${withIcons(location)}
+  ${withIcons(footer)}
+  ${withIcons(bookModal)}
+  ${withIcons(contactModal)}
 `
+
