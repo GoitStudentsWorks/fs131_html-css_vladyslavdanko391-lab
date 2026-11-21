@@ -1,6 +1,4 @@
-/* ==========================================================================
-   Book Modal
-   ========================================================================== */
+/* Book Modal */
 
 body:has(.modal[open]) {
   overflow: hidden;
@@ -68,7 +66,7 @@ body:has(.modal[open]) {
 .modal .button-primary {
   color: #ffffff;
   background-color: var(--color-accent);
-  border-color: var(--color-accent);
+  border: none;
 }
 
 .modal .button-primary:hover,
@@ -155,7 +153,7 @@ body:has(.modal[open]) {
   color: inherit;
   width: 32px;
   height: 40px;
-  padding: auto;
+  padding: 0;
   font-size: 16px;
   line-height: 1;
   background-color: transparent;

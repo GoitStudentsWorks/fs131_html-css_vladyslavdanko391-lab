@@ -1,6 +1,4 @@
-/* ==========================================================================
-   Books section (mobile first)
-   ========================================================================== */
+/* Books section (mobile first) */
 
 /* Змінні секції*/
 .books {
@@ -65,13 +63,12 @@
 .books .button-primary {
   color: #ffffff;
   background-color: var(--color-accent);
-  border-color: var(--color-accent);
+  border: none;
 }
 
 .books .button-primary:hover,
 .books .button-primary:focus-visible {
   background-color: var(--color-accent-hover);
-  border-color: var(--color-accent-hover);
 }
 
 .books .button-outline:hover,
