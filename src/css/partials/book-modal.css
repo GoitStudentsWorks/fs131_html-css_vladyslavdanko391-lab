@@ -20,11 +20,11 @@ body:has(.modal[open]) {
   --transition: 0.2s ease;
 
   position: fixed;
+  margin: auto;
   width: calc(100% - 24px);
   max-width: 1300px;
   max-height: calc(100dvh - 24px);
-  margin: auto;
-  padding: 48px 16px 24px;
+  padding: 64px 16px;
   overflow-y: auto;
   color: inherit;
   background-color: var(--color-bg);
@@ -49,10 +49,10 @@ body:has(.modal[open]) {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 40px;
-  padding: 8px 16px;
+  min-height: 48px;
+  padding: 12px 24px;
   font-size: 16px;
-  line-height: 1.25;
+  line-height: 1.5;
   color: inherit;
   text-align: center;
   background-color: transparent;
@@ -102,7 +102,7 @@ body:has(.modal[open]) {
 
 .modal-content {
   display: grid;
-  gap: 16px;
+  gap: 24px;
 }
 
 .modal-image {
@@ -113,20 +113,24 @@ body:has(.modal[open]) {
   border-radius: var(--radius-m);
 }
 
+.modal-name {
+  margin-bottom: 24px;
+}
+
 .modal-title {
-  font-size: 28px;
+  font-size: 40px;
   font-weight: 700;
   line-height: 1.2;
 }
 
 .modal-author {
-  margin-top: 4px;
-  font-size: 12px;
+  margin-top: 8px;
+  font-size: 14px;
 }
 
 .modal-price {
   margin-top: 8px;
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .modal-actions {
@@ -139,17 +143,20 @@ body:has(.modal[open]) {
 
 .quantity {
   display: flex;
-  gap: 4px;
+  width: 122px;
+  gap: 8px;
   align-items: center;
-  margin-top: 16px;
 }
 
 .quantity-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: inherit;
-  width: 28px;
-  height: 28px;
-  padding: 0;
-  font-size: 14px;
+  width: 32px;
+  height: 40px;
+  padding: auto;
+  font-size: 16px;
   line-height: 1;
   background-color: transparent;
   border: 1px solid var(--color-border);
@@ -166,8 +173,8 @@ body:has(.modal[open]) {
 }
 
 .quantity-input {
-  width: 40px;
-  height: 28px;
+  width: 42px;
+  height: 40px;
   padding: 0;
   font-family: inherit;
   font-size: 14px;
@@ -184,10 +191,14 @@ body:has(.modal[open]) {
   appearance: none;
 }
 
+.modal-actions {
+  gap: 24px;
+}
+
 /* ---------- Accordion ---------- */
 
 .accordion {
-  margin-top: 24px;
+  margin-top: 32px;
   border-top: 1px solid var(--color-divider);
 }
 
@@ -199,8 +210,8 @@ body:has(.modal[open]) {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 0;
-  font-size: 14px;
+  padding: 16px 0;
+  font-size: 18px;
   font-weight: 700;
   list-style: none;
   cursor: pointer;
@@ -220,8 +231,8 @@ body:has(.modal[open]) {
 }
 
 .accordion-text {
-  padding-bottom: 16px;
-  font-size: 12px;
+  padding-bottom: 24px;
+  font-size: 16px;
   line-height: 1.5;
 }
 
@@ -230,7 +241,7 @@ body:has(.modal[open]) {
 @media (min-width: 768px) {
   .modal {
     width: calc(100% - 64px);
-    padding: 48px 32px 40px;
+    padding: 64px 32px;
   }
 
   .modal-content {
@@ -242,46 +253,20 @@ body:has(.modal[open]) {
   .modal-image {
     aspect-ratio: 2 / 3;
   }
-
-  .modal-title {
-    font-size: 32px;
-  }
-
-  .modal-description,
-  .accordion-text {
-    font-size: 13px;
-  }
 }
 
 /* ---------- Desktop: from 1440px ---------- */
 
 @media (min-width: 1440px) {
   .modal {
-    padding: 56px 100px 56px;
+    padding: 64px;
   }
 
   .modal-content {
     grid-template-columns: 311px minmax(0, 1fr);
   }
 
-  .modal-title {
-    font-size: 40px;
-  }
-
-  .modal-author {
-    font-size: 14px;
-  }
-
   .modal-actions {
     grid-template-columns: repeat(2, minmax(0, 313px));
-  }
-
-  .accordion-summary {
-    font-size: 16px;
-  }
-
-  .modal-description,
-  .accordion-text {
-    font-size: 14px;
   }
 }

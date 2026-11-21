@@ -16,15 +16,18 @@ import contactModal from '../partials/contact-modal.html?raw';
 
 const headerWithIcons = header.replaceAll('/icons.svg', iconsUrl);
 
+const booksWithIcons = books.replaceAll('/icons.svg', iconsUrl);
+const bookModalWithIcons = bookModal.replaceAll('/icons.svg', iconsUrl);
+
 document.querySelector('#app').innerHTML = `
   ${headerWithIcons}
   ${hero}
-  ${books}
+  ${booksWithIcons}
   ${feedbacks}
   ${events}
   ${article}
   ${location}
   ${footer}
-  ${bookModal}
+  ${bookModalWithIcons}
   ${contactModal}
 `;
