@@ -14,7 +14,7 @@
   --radius-m: 8px;
   --transition: 0.2s ease;
 
-  padding: 24px 16px 40px;
+  padding: 32px 16px;
 }
 
 /* Прихований заголовок "Trending books" (видно тільки скрінрідерам) */
@@ -47,9 +47,9 @@
   align-items: center;
   justify-content: center;
   min-height: 40px;
-  padding: 8px 16px;
+  padding: 8px 20px;
   font-size: 16px;
-  line-height: 1.25;
+  line-height: 1.5;
   color: inherit;
   text-align: center;
   background-color: transparent;
@@ -87,7 +87,7 @@
     'filter'
     'list'
     'more';
-  gap: 16px;
+  gap: 24px;
   width: 100%;
   max-width: var(--container-width);
   margin: 0 auto;
@@ -98,7 +98,7 @@
   grid-area: head;
   align-items: baseline;
   justify-content: space-between;
-  gap: 16px;
+  gap: 24px;
 }
 
 .books-title {
@@ -115,8 +115,7 @@
   display: grid;
   grid-area: list;
   grid-template-columns: 1fr;
-  gap: 32px 16px;
-  margin-top: 8px;
+  gap: 40px;
 }
 
 .books-message {
@@ -128,7 +127,6 @@
 .books-more {
   grid-area: more;
   width: 100%;
-  margin-top: 8px;
 }
 
 /* ---------- Filter ---------- */
@@ -144,8 +142,8 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 12px 16px;
-  font-size: 16px;
+  padding: 8px 12px;
+  font-size: 18px;
   text-align: left;
   background-color: var(--color-field);
   border: 0;
@@ -191,8 +189,8 @@
   color: inherit;
   display: block;
   width: 100%;
-  padding: 12px 16px;
-  font-size: 14px;
+  padding: 8px 12px;
+  font-size: 18px;
   line-height: 1.5;
   text-align: left;
   background-color: transparent;
@@ -211,7 +209,7 @@
 .book-card {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
 }
 
 .book-card-image {
@@ -233,9 +231,10 @@
   overflow: hidden;
   font-size: 16px;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.5;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-transform: capitalize;
 }
 
 .book-card-author {
@@ -252,14 +251,13 @@
 
 .book-card-button {
   width: 100%;
-  margin-top: auto;
 }
 
 /* ---------- Tablet: from 768px ---------- */
 
 @media (min-width: 768px) {
   .books {
-    padding: 32px 32px 56px;
+    padding: 32px 32px;
   }
 
   .books-inner {
@@ -269,7 +267,7 @@
       'more more';
     grid-template-columns: minmax(0, 1fr) 230px;
     align-items: center;
-    gap: 16px 24px;
+    gap: 24px;
   }
 
   .books-list {
@@ -289,7 +287,7 @@
 
 @media (min-width: 1440px) {
   .books {
-    padding: 40px 64px 80px;
+    padding: 64px 64px;
   }
 
   .books-inner {
@@ -300,20 +298,12 @@
     grid-template-columns: 300px minmax(0, 1fr);
     grid-template-rows: auto 1fr auto;
     align-items: start;
-    gap: 24px 24px;
-  }
-
-  .books-head {
-    padding-right: 16px;
+    gap: 24px;
   }
 
   .books-list {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     margin-top: 0;
-  }
-
-  .books-more {
-    margin-top: 16px;
   }
 
   /* Фільтр на desktop - постійно видимий список, без випадайки */
@@ -332,8 +322,8 @@
   }
 
   .filter-button {
-    padding: 10px 0;
-    font-size: 16px;
+    padding: 8px 0;
+    font-size: 18px;
     background: none;
   }
 
