@@ -60,12 +60,14 @@
     color var(--transition);
 }
 
+/* Normal */
 .books .button-primary {
   color: #ffffff;
   background-color: var(--color-accent);
   border: none;
 }
 
+/* Hover / Focus */
 .books .button-primary:hover,
 .books .button-primary:focus-visible {
   background-color: var(--color-accent-hover);
@@ -75,6 +77,23 @@
 .books .button-outline:focus-visible {
   color: #ffffff;
   background-color: var(--color-border);
+}
+
+/* Disabled */
+.books .button:disabled {
+  cursor: default;
+}
+
+.books .button-primary:disabled {
+  color: var(--color-disabled-text);
+  background-color: var(--color-disabled);
+  border-color: var(--color-disabled);
+}
+
+.books .button-outline:disabled {
+  color: var(--color-disabled);
+  background-color: transparent;
+  border-color: var(--color-disabled-border);
 }
 
 .books-inner {
@@ -199,6 +218,13 @@
 .filter-button:hover,
 .filter-button-active {
   background-color: var(--color-dropdown-active);
+}
+
+.filter-error {
+  margin-top: 4px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgb(11 5 0 / 60%);
 }
 
 /* ---------- Book card ---------- */
