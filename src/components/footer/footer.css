@@ -1,4 +1,3 @@
-/* ===== Footer ===== */
 .footer {
   background-color: #ea8d50;
   width: 100%;
@@ -20,7 +19,6 @@
   gap: 40px;
 }
 
-/* Left: logo + links */
 .footer__brand {
   display: flex;
   flex-direction: column;
@@ -47,7 +45,6 @@
   opacity: 0.6;
 }
 
-/* Right: form */
 .footer__join {
   width: 400px;
   display: flex;
@@ -120,7 +117,6 @@
   line-height: 18px;
 }
 
-/* сообщение не влияет на высоту блока */
 .footer__message {
   position: absolute;
   top: 100%;
