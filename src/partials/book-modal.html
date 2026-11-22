@@ -27,7 +27,7 @@
           <p class="modal-price">$15</p>
         </div>
 
-        <form class="modal-form">
+        <form class="modal-form" novalidate>
           <div class="quantity">
             <button
               class="quantity-button"
@@ -43,7 +43,10 @@
               type="number"
               value="1"
               min="1"
+              max="99"
+              step="1"
               aria-label="Quantity"
+              aria-describedby="quantity-error"
             />
             <button
               class="quantity-button"
@@ -55,6 +58,11 @@
               </svg>
             </button>
           </div>
+
+          <!-- Error text -->
+          <p class="quantity-error" id="quantity-error" role="alert" hidden>
+            Enter a quantity from 1 to 99
+          </p>
 
           <div class="modal-actions">
             <button class="button button-primary" type="button">

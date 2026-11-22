@@ -17,6 +17,13 @@ body:has(.modal[open]) {
   --radius-l: 16px;
   --transition: 0.2s ease;
 
+  /* active / disabled */
+  --color-accent-active: #b44a04;
+  --color-outline-active: #dad9d8;
+  --color-disabled: #ccbfb8;
+  --color-disabled-text: #fdf1eb;
+  --color-disabled-border: #f0e2db;
+
   position: fixed;
   margin: auto;
   width: calc(100% - 24px);
@@ -24,10 +31,32 @@ body:has(.modal[open]) {
   max-height: calc(100dvh - 24px);
   padding: 64px 16px;
   overflow-y: auto;
+  overscroll-behavior: contain;
   color: inherit;
   background-color: var(--color-bg);
   border: 0;
   border-radius: var(--radius-l);
+}
+
+.modal::-webkit-scrollbar {
+  width: 4px;
+}
+
+.modal::-webkit-scrollbar-track {
+  margin-block: var(--radius-l);
+  background: transparent;
+}
+
+.modal::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: var(--radius-s);
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .modal {
+    scrollbar-color: rgba(0, 0, 0, 0.25);
+    scrollbar-width: thin;
+  }
 }
 
 .modal::backdrop {
@@ -189,6 +218,7 @@ body:has(.modal[open]) {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-s);
   cursor: pointer;
+  user-select: none;
   transition:
     background-color var(--transition),
     color var(--transition);
@@ -222,6 +252,13 @@ body:has(.modal[open]) {
   border: 0;
   border-radius: var(--radius-s);
   appearance: textfield;
+}
+
+.quantity-error {
+  margin-top: 4px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgb(11 5 0 / 60%);
 }
 
 .quantity-input::-webkit-inner-spin-button,
@@ -332,5 +369,40 @@ body:has(.modal[open]) {
 
   .modal-actions {
     grid-template-columns: repeat(2, minmax(0, 313px));
+  }
+}
+
+/* Push */
+.toast {
+  position: fixed;
+  inset: auto 16px 24px;
+  width: fit-content;
+  max-width: calc(100% - 32px);
+  height: fit-content;
+  margin: 0 auto;
+  padding: 12px 20px;
+  overflow: visible;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #fceee6;
+  background-color: #0b0500;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 25%);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+@starting-style {
+  .toast:popover-open {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toast {
+    transition: none;
   }
 }

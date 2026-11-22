@@ -12,6 +12,13 @@
   --radius-m: 8px;
   --transition: 0.2s ease;
 
+  /* active / disabled */
+  --color-accent-active: #b44a04;
+  --color-outline-active: #dad9d8;
+  --color-disabled: #ccbfb8;
+  --color-disabled-text: #fdf1eb;
+  --color-disabled-border: #f0e2db;
+
   padding: 32px 16px;
 }
 
@@ -79,6 +86,16 @@
   background-color: var(--color-border);
 }
 
+/* Active */
+.books .button-primary:active {
+  background-color: var(--color-accent-active);
+}
+
+.books .button-outline:active {
+  color: inherit;
+  background-color: var(--color-outline-active);
+}
+
 /* Disabled */
 .books .button:disabled {
   cursor: default;
@@ -138,6 +155,10 @@
   grid-column: 1 / -1;
   padding: 24px 0;
   text-align: center;
+}
+
+.books-error {
+  color: rgb(11 5 0 / 60%);
 }
 
 .books-more {
