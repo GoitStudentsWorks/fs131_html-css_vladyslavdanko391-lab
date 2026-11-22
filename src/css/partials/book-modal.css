@@ -54,7 +54,7 @@ body:has(.modal[open]) {
 
 @supports not selector(::-webkit-scrollbar) {
   .modal {
-    scrollbar-color: rgba(0, 0, 0, 0.25);
+    scrollbar-color: rgba(0, 0, 0, 0.25) transparent;
     scrollbar-width: thin;
   }
 }

@@ -14,6 +14,14 @@ import footer from '../partials/footer.html?raw';
 import bookModal from '../partials/book-modal.html?raw';
 import contactModal from '../partials/contact-modal.html?raw';
 
+import Accordion from 'accordion-js';
+import {
+  getBookById,
+  getBooksByCategory,
+  getCategoryList,
+  getTopBooks,
+} from './api.js';
+
 const headerWithIcons = header.replaceAll('/icons.svg', iconsUrl);
 
 const booksWithIcons = books.replaceAll('/icons.svg', iconsUrl);

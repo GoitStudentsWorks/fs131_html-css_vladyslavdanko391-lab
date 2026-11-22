@@ -104,7 +104,7 @@
 .books .button-primary:disabled {
   color: var(--color-disabled-text);
   background-color: var(--color-disabled);
-  border-color: var(--color-disabled);
+  border: none;
 }
 
 .books .button-outline:disabled {
