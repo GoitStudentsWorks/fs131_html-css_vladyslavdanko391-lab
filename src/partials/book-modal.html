@@ -31,10 +31,9 @@
               type="button"
               aria-label="Decrease quantity"
             >
-              -
-              <!-- <svg width="10" height="24" aria-hidden="true">
+              <svg width="10" height="24" aria-hidden="true">
                 <use href="/icons.svg#minus"></use>
-              </svg> -->
+              </svg>
             </button>
             <input
               class="quantity-input"
@@ -48,86 +47,96 @@
               type="button"
               aria-label="Increase quantity"
             >
-              +
-              <!-- <svg width="10" height="24" aria-hidden="true">
+              <svg width="10" height="24" aria-hidden="true">
                 <use href="/icons.svg#plus"></use>
-              </svg> -->
+              </svg>
             </button>
           </div>
 
           <div class="modal-actions">
-            <button class="button button-primary" type="submit">
+            <button class="button button-primary" type="button">
               Add To Cart
             </button>
-            <button class="button button-outline" type="button">Buy Now</button>
+            <button class="button button-outline" type="submit">Buy Now</button>
           </div>
         </form>
       </div>
 
       <div class="accordion">
-        <details class="accordion-item">
-          <summary class="accordion-summary">
-            Details
-            <svg
-              class="accordion-icon"
-              width="20"
-              height="20"
-              aria-hidden="true"
-            >
-              <use href="/icons.svg#chevron-down"></use>
-            </svg>
-          </summary>
-          <!-- Текст приходить з бекенду -->
-          <p class="accordion-text modal-description">
-            I Will Find You is a gripping thriller by the master of suspense,
-            Harlan Coben. The story follows David Burroughs, a former prisoner
-            wrongfully convicted of murdering his own son. When he discovers a
-            clue suggesting his son might still be alive, David escapes from
-            prison to uncover the truth. Fast-paced, emotional, and full of
-            unexpected twists — this novel will keep you hooked until the very
-            last page.
-          </p>
-        </details>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-trigger" type="button">
+              Details
+              <svg
+                class="accordion-icon"
+                width="20"
+                height="20"
+                aria-hidden="true"
+              >
+                <use href="/icons.svg#chevron-down"></use>
+              </svg>
+            </button>
+          </h3>
+          <div class="accordion-panel">
+            <!-- Текст приходить з бекенду -->
+            <p class="accordion-text modal-description">
+              I Will Find You is a gripping thriller by the master of suspense,
+              Harlan Coben. The story follows David Burroughs, a former prisoner
+              wrongfully convicted of murdering his own son. When he discovers a
+              clue suggesting his son might still be alive, David escapes from
+              prison to uncover the truth. Fast-paced, emotional, and full of
+              unexpected twists — this novel will keep you hooked until the very
+              last page.
+            </p>
+          </div>
+        </div>
 
-        <details class="accordion-item">
-          <summary class="accordion-summary">
-            Shipping
-            <svg
-              class="accordion-icon"
-              width="20"
-              height="20"
-              aria-hidden="true"
-            >
-              <use href="/icons.svg#chevron-down"></use>
-            </svg>
-          </summary>
-          <p class="accordion-text">
-            We ship across the United States within 2–5 business days. All
-            orders are processed through USPS or a reliable courier service.
-            Enjoy free standard shipping on orders over $50.
-          </p>
-        </details>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-trigger" type="button">
+              Shipping
+              <svg
+                class="accordion-icon"
+                width="20"
+                height="20"
+                aria-hidden="true"
+              >
+                <use href="/icons.svg#chevron-down"></use>
+              </svg>
+            </button>
+          </h3>
+          <div class="accordion-panel">
+            <p class="accordion-text">
+              We ship across the United States within 2–5 business days. All
+              orders are processed through USPS or a reliable courier service.
+              Enjoy free standard shipping on orders over $50.
+            </p>
+          </div>
+        </div>
 
-        <details class="accordion-item">
-          <summary class="accordion-summary">
-            Returns
-            <svg
-              class="accordion-icon"
-              width="20"
-              height="20"
-              aria-hidden="true"
-            >
-              <use href="/icons.svg#chevron-down"></use>
-            </svg>
-          </summary>
-          <p class="accordion-text">
-            You can return an item within 14 days of receiving your order,
-            provided it hasn’t been used and is in its original condition. To
-            start a return, please contact our support team — we’ll guide you
-            through the process quickly and hassle-free.
-          </p>
-        </details>
-      </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-trigger" type="button">
+              Returns
+              <svg
+                class="accordion-icon"
+                width="20"
+                height="20"
+                aria-hidden="true"
+              >
+                <use href="/icons.svg#chevron-down"></use>
+              </svg>
+            </button>
+          </h3>
+          <div class="accordion-panel">
+            <p class="accordion-text">
+              You can return an item within 14 days of receiving your order,
+              provided it hasn’t been used and is in its original condition. To
+              start a return, please contact our support team — we’ll guide you
+              through the process quickly and hassle-free.
+            </p>
+          </div>
+        </div>
     </div>
   </div>
 </dialog>

@@ -63,12 +63,14 @@ body:has(.modal[open]) {
     color var(--transition);
 }
 
+/* Normal */
 .modal .button-primary {
   color: #ffffff;
   background-color: var(--color-accent);
   border: none;
 }
 
+/* Hover / Focus */
 .modal .button-primary:hover,
 .modal .button-primary:focus-visible {
   background-color: var(--color-accent-hover);
@@ -79,6 +81,33 @@ body:has(.modal[open]) {
 .modal .button-outline:focus-visible {
   color: #ffffff;
   background-color: var(--color-border);
+}
+
+/* Active */
+.modal .button-primary:active {
+  background-color: var(--color-accent-active);
+  border-color: var(--color-accent-active);
+}
+
+.modal .button-outline:active {
+  background-color: var(--color-outline-active);
+}
+
+/* Disabled */
+.modal .button:disabled {
+  cursor: default;
+}
+
+.modal .button-primary:disabled {
+  color: var(--color-disabled-text);
+  background-color: var(--color-disabled);
+  border-color: var(--color-disabled);
+}
+
+.modal .button-outline:disabled {
+  color: var(--color-disabled);
+  background-color: transparent;
+  border-color: var(--color-disabled-border);
 }
 
 .modal-close {
@@ -165,9 +194,21 @@ body:has(.modal[open]) {
     color var(--transition);
 }
 
-.quantity-button:hover {
+.quantity-button:hover,
+.modal .quantity-button:focus-visible {
   color: #ffffff;
   background-color: var(--color-border);
+}
+
+.modal .quantity-button:active {
+  background-color: var(--color-outline-active);
+}
+
+.modal .quantity-button:disabled {
+  color: var(--color-disabled);
+  background-color: transparent;
+  border-color: var(--color-disabled-border);
+  cursor: default;
 }
 
 .quantity-input {
@@ -204,19 +245,23 @@ body:has(.modal[open]) {
   border-bottom: 1px solid var(--color-divider);
 }
 
-.accordion-summary {
+.accordion-header {
+  margin: 0;
+}
+
+.accordion-trigger {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
   padding: 16px 0;
   font-size: 18px;
   font-weight: 700;
-  list-style: none;
+  color: inherit;
+  text-align: left;
+  background: none;
+  border: 0;
   cursor: pointer;
-}
-
-.accordion-summary::-webkit-details-marker {
-  display: none;
 }
 
 .accordion-icon {
@@ -224,8 +269,29 @@ body:has(.modal[open]) {
   transition: transform var(--transition);
 }
 
-.accordion-item[open] .accordion-icon {
+.accordion-item.is-active .accordion-icon {
   transform: rotate(180deg);
+}
+
+.accordion-panel {
+  overflow: hidden;
+  transition-property: height, visibility;
+  transition-timing-function: ease;
+}
+
+.accordion-item.js-enabled .accordion-panel {
+  visibility: hidden;
+}
+
+.accordion-item.is-active .accordion-panel {
+  visibility: visible;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accordion-panel,
+  .accordion-icon {
+    transition-duration: 0s !important;
+  }
 }
 
 .accordion-text {
