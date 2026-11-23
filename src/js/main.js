@@ -14,9 +14,11 @@ import footer from "../partials/footer.html?raw";
 import bookModal from "../partials/book-modal.html?raw";
 import contactModal from "../partials/contact-modal.html?raw";
 
-const withIcons = (html) => html.replaceAll('/icons.svg', iconsUrl);
+import { initBooks } from "./books/init-books.js";
 
-document.querySelector('#app').innerHTML = `
+const withIcons = (html) => html.replaceAll("/icons.svg", iconsUrl);
+
+document.querySelector("#app").innerHTML = `
   ${withIcons(header)}
   ${withIcons(hero)}
   ${withIcons(books)}
@@ -27,6 +29,10 @@ document.querySelector('#app').innerHTML = `
   ${withIcons(footer)}
   ${withIcons(bookModal)}
   ${withIcons(contactModal)}
-`
+`;
+
+initBooks();
 
 import("../js/hero.js");
+
+
