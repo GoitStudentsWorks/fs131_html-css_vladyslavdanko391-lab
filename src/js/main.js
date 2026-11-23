@@ -1,7 +1,12 @@
+
 import iconsUrl from "../assets/icons/icons.svg?url";
+
+import midnightImage from "../img/midnight.jpg";
+import bookCoverImage from "../img/book-cover.jpg";
+import childrenImage from "../img/children.jpg";
+
 import "../css/reset.css";
 import "../css/index.css";
-import "./header.js";
 
 import header from "../partials/header.html?raw";
 import hero from "../partials/hero.html?raw";
@@ -18,12 +23,25 @@ import { initBooks } from "./books/init-books.js";
 
 const withIcons = (html) => html.replaceAll("/icons.svg", iconsUrl);
 
-document.querySelector("#app").innerHTML = `
-  ${withIcons(header)}
+const headerHtml = withIcons(header);
+
+const eventsHtml = withIcons(events)
+  .replaceAll("/src/img/midnight.jpg", midnightImage)
+  .replaceAll("/src/img/book-cover.jpg", bookCoverImage)
+  .replaceAll("/src/img/children.jpg", childrenImage);
+
+const app = document.querySelector("#app");
+
+if (!app) {
+  throw new Error("Не знайдено елемент #app у index.html");
+}
+
+app.innerHTML = `
+  ${headerHtml}
   ${withIcons(hero)}
   ${withIcons(books)}
   ${withIcons(feedbacks)}
-  ${withIcons(events)}
+  ${eventsHtml}
   ${withIcons(article)}
   ${withIcons(location)}
   ${withIcons(footer)}
@@ -33,6 +51,10 @@ document.querySelector("#app").innerHTML = `
 
 initBooks();
 
-import("../js/hero.js");
-
-
+// Ініціалізуємо модулі після вставлення HTML у DOM.
+await Promise.all([
+  import("./header.js"),
+  import("./events.js"),
+  import("./footer.js"),
+  import("./hero.js"),
+]);
