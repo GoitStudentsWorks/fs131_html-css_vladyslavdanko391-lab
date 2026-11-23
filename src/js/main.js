@@ -47,4 +47,8 @@ app.innerHTML = `
 `;
 
 // Ці модулі шукають елементи в DOM, тому запускаємо їх після вставлення partials.
-await Promise.all([import("./header.js"), import("./events.js")]);
+await Promise.all([
+  import("./header.js"),
+  import("./events.js"),
+  import("./footer.js"),
+]);
