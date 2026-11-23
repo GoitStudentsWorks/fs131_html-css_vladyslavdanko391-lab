@@ -24,6 +24,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Check project files
+        run: |
+          pwd
+          ls -la
+          find . -maxdepth 3 \( -name "package.json" -o -name "package-lock.json" \) -print
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
