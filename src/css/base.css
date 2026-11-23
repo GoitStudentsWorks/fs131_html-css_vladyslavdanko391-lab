@@ -9,13 +9,14 @@
   --container-width: 343px;
 }
 
+
 @media (min-width: 768px) {
   :root {
     --container-width: 704px;
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1154px) {
   :root {
     --container-width: 1312px;
   }
