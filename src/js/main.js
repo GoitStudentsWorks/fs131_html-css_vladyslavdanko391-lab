@@ -1,3 +1,4 @@
+
 import iconsUrl from "../assets/icons/icons.svg?url";
 
 import midnightImage from "../img/midnight.jpg";
@@ -18,6 +19,8 @@ import footer from "../partials/footer.html?raw";
 import bookModal from "../partials/book-modal.html?raw";
 import contactModal from "../partials/contact-modal.html?raw";
 
+import { initBooks } from "./books/init-books.js";
+
 const withIcons = (html) => html.replaceAll("/icons.svg", iconsUrl);
 
 const headerHtml = withIcons(header);
@@ -35,20 +38,23 @@ if (!app) {
 
 app.innerHTML = `
   ${headerHtml}
-  ${hero}
-  ${books}
-  ${feedbacks}
+  ${withIcons(hero)}
+  ${withIcons(books)}
+  ${withIcons(feedbacks)}
   ${eventsHtml}
-  ${article}
-  ${location}
-  ${footer}
-  ${bookModal}
-  ${contactModal}
+  ${withIcons(article)}
+  ${withIcons(location)}
+  ${withIcons(footer)}
+  ${withIcons(bookModal)}
+  ${withIcons(contactModal)}
 `;
 
-// Ці модулі шукають елементи в DOM, тому запускаємо їх після вставлення partials.
+initBooks();
+
+// Ініціалізуємо модулі після вставлення HTML у DOM.
 await Promise.all([
   import("./header.js"),
   import("./events.js"),
   import("./footer.js"),
+  import("./hero.js"),
 ]);
