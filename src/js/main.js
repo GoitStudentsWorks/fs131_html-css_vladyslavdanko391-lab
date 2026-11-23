@@ -1,4 +1,3 @@
-
 import iconsUrl from "../assets/icons/icons.svg?url";
 
 import midnightImage from "../img/midnight.jpg";
@@ -20,6 +19,7 @@ import bookModal from "../partials/book-modal.html?raw";
 import contactModal from "../partials/contact-modal.html?raw";
 
 import { initBooks } from "./books/init-books.js";
+import { initFeedbacks } from "./feedbacks.js";
 
 const withIcons = (html) => html.replaceAll("/icons.svg", iconsUrl);
 
@@ -50,8 +50,8 @@ app.innerHTML = `
 `;
 
 initBooks();
+initFeedbacks();
 
-// Ініціалізуємо модулі після вставлення HTML у DOM.
 await Promise.all([
   import("./header.js"),
   import("./events.js"),
