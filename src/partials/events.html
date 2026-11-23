@@ -1,0 +1,154 @@
+<section class="event" id="events">
+  <div class="container">
+    <p class="subtitle">Events</p>
+    <h2 class="events-title">Upcoming Events at Booksy</h2>
+    <p class="event-description">
+      Discover readings, workshops, and bookish gatherings — online and offline.
+      Everyone’s welcome.
+    </p>
+
+    <div class="event-slider">
+      <div class="events-slider__viewport">
+        <ul class="events-slider__track">
+          <li class="events-slider__slide">
+            <img
+              src="/src/img/midnight.jpg"
+              alt="People reading together in a cozy library"
+            />
+            <h3 class="events-slide__title">
+              Cozy Book Club — “The Midnight Library”
+            </h3>
+            <div class="events-slide__meta">
+              <p class="events-slide__format">In-store</p>
+              <p class="events-slide__date">June 5, 6:30 PM</p>
+            </div>
+            <p class="events-slide__content">
+              Join us for an evening of tea, thoughtful conversation, and shared
+              reflections as we dive into Matt Haig’s bestseller.
+            </p>
+            <button class="events-btn" type="button">Register</button>
+          </li>
+
+          <li class="events-slider__slide">
+            <img
+              src="/src/img/book-cover.jpg"
+              alt="Designers working on book cover concepts"
+            />
+            <h3 class="events-slide__title">Book Cover Design Workshop</h3>
+            <div class="events-slide__meta">
+              <p class="events-slide__format">Online</p>
+              <p class="events-slide__date">June 12, 7:00 PM</p>
+            </div>
+            <p class="events-slide__content">
+              A hands-on session for aspiring designers and curious readers.
+              Learn what makes a cover stand out — from concept to print.
+            </p>
+            <button class="events-btn" type="button">Register</button>
+          </li>
+
+          <li class="events-slider__slide">
+            <img
+              src="/src/img/children.jpg"
+              alt="A storyteller reading to children"
+            />
+            <h3 class="events-slide__title">Children’s Story Hour</h3>
+            <div class="events-slide__meta">
+              <p class="events-slide__format">In-store</p>
+              <p class="events-slide__date">June 15, 11:00 AM</p>
+            </div>
+            <p class="events-slide__content">
+              A magical morning of stories, games, and imagination for our
+              youngest book lovers (ages 4–8).
+            </p>
+            <button class="events-btn" type="button">Register</button>
+          </li>
+        </ul>
+      </div>
+
+      <div
+        class="events-slider__controls"
+        role="group"
+        aria-label="Events slider controls"
+      >
+        <div
+          class="events-slider__dots"
+          role="group"
+          aria-label="Choose an event"
+        ></div>
+
+        <div class="events-slider__arrows">
+          <button
+            class="events-slider__arrow events-slider__arrow--prev"
+            type="button"
+            aria-label="Previous event"
+          >
+            <svg width="20" height="20" aria-hidden="true">
+              <use href="/icons.svg#icon-arrow-left"></use>
+            </svg>
+          </button>
+
+          <button
+            class="events-slider__arrow events-slider__arrow--next"
+            type="button"
+            aria-label="Next event"
+          >
+            <svg width="20" height="20" aria-hidden="true">
+              <use href="/icons.svg#icon-arrow-right"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div
+  class="register-modal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="register-modal-title"
+>
+  <div class="register-modal__content">
+    <button
+      class="register-modal__close"
+      type="button"
+      aria-label="Close registration form"
+    >
+      &times;
+    </button>
+
+    <h2 class="register-modal__title" id="register-modal-title">Register</h2>
+    <p class="register-modal__event-title"></p>
+
+    <form class="register-form">
+      <label for="name">Name*</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Ann"
+        autocomplete="name"
+        required
+      />
+
+      <label for="email">Email*</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="hello@booksy.com"
+        autocomplete="email"
+        required
+      />
+
+      <label for="message">Message</label>
+      <textarea
+        id="message"
+        name="message"
+        placeholder="Type your message..."
+      ></textarea>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+</div>
