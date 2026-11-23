@@ -3,6 +3,15 @@
 import { getBooksByCategory, getTopBooks } from '../api.js';
 import { ALL_CATEGORIES, SHOW_MORE_STEP } from './config.js';
 import { els } from './elements.js';
+import {
+  flattenTopBooks,
+  formatPrice,
+  formatTitle,
+  getBookPrice,
+  getPageSize,
+} from './helpers.js';
+import { openModal } from './modal.js';
+import { state } from './state.js';
 
 function createBookCard(book) {
   const card = els.bookTemplate.content.cloneNode(true);
