@@ -38,6 +38,14 @@ body:has(.modal[open]) {
   border-radius: var(--radius-l);
 }
 
+.modal {
+  --scrollbar-color: transparent;
+}
+
+.modal.modal-scrolling {
+  --scrollbar-color: rgba(0, 0, 0, 0.25);
+}
+
 .modal::-webkit-scrollbar {
   width: 4px;
 }
@@ -48,13 +56,17 @@ body:has(.modal[open]) {
 }
 
 .modal::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: var(--scrollbar-color);
   border-radius: var(--radius-s);
+}
+
+.modal::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.25);
 }
 
 @supports not selector(::-webkit-scrollbar) {
   .modal {
-    scrollbar-color: rgba(0, 0, 0, 0.25) transparent;
+    scrollbar-color: var(--scrollbar-color) transparent;
     scrollbar-width: thin;
   }
 }
