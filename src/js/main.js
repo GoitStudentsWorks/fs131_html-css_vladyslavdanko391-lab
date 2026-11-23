@@ -14,20 +14,19 @@ import footer from "../partials/footer.html?raw";
 import bookModal from "../partials/book-modal.html?raw";
 import contactModal from "../partials/contact-modal.html?raw";
 
-const headerWithIcons = header.replaceAll("/icons.svg", iconsUrl);
-const heroWithIcons = hero.replaceAll("/assets/icons/icons.svg", iconsUrl);
+const withIcons = (html) => html.replaceAll('/icons.svg', iconsUrl);
 
-document.querySelector("#app").innerHTML = `
-  ${headerWithIcons}
-  ${heroWithIcons}
-  ${books}
-  ${feedbacks}
-  ${events}
-  ${article}
-  ${location}
-  ${footer}
-  ${bookModal}
-  ${contactModal}
-`;
+document.querySelector('#app').innerHTML = `
+  ${withIcons(header)}
+  ${withIcons(hero)}
+  ${withIcons(books)}
+  ${withIcons(feedbacks)}
+  ${withIcons(events)}
+  ${withIcons(article)}
+  ${withIcons(location)}
+  ${withIcons(footer)}
+  ${withIcons(bookModal)}
+  ${withIcons(contactModal)}
+`
 
 import("../js/hero.js");
