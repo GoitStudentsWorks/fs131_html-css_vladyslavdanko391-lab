@@ -29,6 +29,12 @@ import contactModal from "../partials/contact-modal.html?raw";
 import { initBooks } from "./books/init-books.js";
 import { initFeedbacks } from "./feedbacks.js";
 
+const heroImages = import.meta.glob("../img/hero/*.avif", {
+  eager: true,
+  query: "?url",
+  import: "default",
+});
+
 const withIcons = (html) => html.replaceAll("/icons.svg", iconsUrl);
 
 const headerHtml = withIcons(header);
@@ -37,6 +43,15 @@ const eventsHtml = withIcons(events)
   .replaceAll("/src/img/midnight.jpg", midnightImage)
   .replaceAll("/src/img/book-cover.jpg", bookCoverImage)
   .replaceAll("/src/img/children.jpg", childrenImage);
+
+const heroHtml = Object.entries(heroImages).reduce(
+  (html, [path, url]) => {
+    const filename = path.split("/").pop();
+
+    return html.replaceAll(`./src/img/hero/${filename}`, url);
+  },
+  withIcons(hero),
+);
 
 const feedbacksHtml = withIcons(feedbacks)
   .replaceAll("/src/img/feedbacks/jane-doe.png", janeAvatar)
