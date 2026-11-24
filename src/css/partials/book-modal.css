@@ -152,7 +152,7 @@ body:has(.modal[open]) {
 }
 
 .modal-close {
-  color: inherit;
+  color: #0B0500;
   position: absolute;
   top: 16px;
   right: 16px;
