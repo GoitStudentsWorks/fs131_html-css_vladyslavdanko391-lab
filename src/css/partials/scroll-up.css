@@ -9,10 +9,8 @@
   width: 48px;
   height: 48px;
   padding: 0;
-  /* Прозора рамка завжди є, щоб на hover кнопка не "стрибала" */
   border: 1px solid transparent;
   background-color: #e15d05;
-  /* Колір іконки задається через color: у спрайті path має fill="currentColor" */
   color: #fff;
   cursor: pointer;
   opacity: 0;
@@ -48,12 +46,10 @@
   border-color: transparent;
   color: #fff;
 }
-
+  
 /* Disabled */
 .scroll-up:disabled {
-  background-color: #f7d1b9;
-  border-color: transparent;
-  color: #ccbfb8;
+  opacity: 20%;
   cursor: not-allowed;
 }
 
