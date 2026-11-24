@@ -17,6 +17,7 @@ import location from "../partials/location.html?raw";
 import footer from "../partials/footer.html?raw";
 import bookModal from "../partials/book-modal.html?raw";
 import contactModal from "../partials/contact-modal.html?raw";
+import scrollUp from "../partials/scroll-up.html?raw";
 
 const withIcons = (html) => html.replaceAll("/icons.svg", iconsUrl);
 
@@ -44,7 +45,8 @@ app.innerHTML = `
   ${footer}
   ${bookModal}
   ${contactModal}
+  ${withIcons(scrollUp)}
 `;
 
 // Ці модулі шукають елементи в DOM, тому запускаємо їх після вставлення partials.
-await Promise.all([import("./header.js"), import("./events.js")]);
+await Promise.all([import("./header.js"), import("./events.js"), import("./scroll-up.js")]);

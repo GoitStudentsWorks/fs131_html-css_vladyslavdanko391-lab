@@ -1,0 +1,75 @@
+.scroll-up {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  /* Прозора рамка завжди є, щоб на hover кнопка не "стрибала" */
+  border: 1px solid transparent;
+  background-color: #e15d05;
+  /* Колір іконки задається через color: у спрайті path має fill="currentColor" */
+  color: #fff;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease,
+    transform 0.25s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.scroll-up.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Hover / Focus */
+.scroll-up:hover,
+.scroll-up:focus-visible {
+  background-color: #fceee6;
+  border-color: #0b050026;
+  color: #0b0500;
+  outline: none;
+}
+
+/* Active */
+.scroll-up:active {
+  background-color: #5a2502;
+  border-color: transparent;
+  color: #fff;
+}
+
+/* Disabled */
+.scroll-up:disabled {
+  background-color: #f7d1b9;
+  border-color: transparent;
+  color: #ccbfb8;
+  cursor: not-allowed;
+}
+
+.scroll-up__icon {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .scroll-up {
+    right: 32px;
+    bottom: 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-up {
+    transition: none;
+  }
+}
