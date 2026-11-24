@@ -11,6 +11,7 @@ import emilyJohnsonAvatar from "../img/feedbacks/emily-johnson.png";
 import michaelAvatar from "../img/feedbacks/michael-wilson.png";
 import emilyAvatar from "../img/feedbacks/emily-davis.png";
 import danielAvatar from "../img/feedbacks/daniel-lee.png";
+import coverPlaceholderImage from "../img/cover-placeholder.svg";
 
 import "../css/reset.css";
 import "../css/index.css";
@@ -32,6 +33,16 @@ import { initFeedbacks } from "./feedbacks.js";
 const withIcons = (html) => html.replaceAll("/icons.svg", iconsUrl);
 
 const headerHtml = withIcons(header);
+
+const booksHtml = withIcons(books).replaceAll(
+  "./images/cover-placeholder.svg",
+  coverPlaceholderImage,
+);
+
+const bookModalHtml = withIcons(bookModal).replaceAll(
+  "./images/cover-placeholder.svg",
+  coverPlaceholderImage,
+);
 
 const eventsHtml = withIcons(events)
   .replaceAll("/src/img/midnight.jpg", midnightImage)
@@ -59,13 +70,13 @@ if (!app) {
 app.innerHTML = `
   ${headerHtml}
   ${withIcons(hero)}
-  ${withIcons(books)}
+  ${booksHtml}
   ${feedbacksHtml}
   ${eventsHtml}
   ${articleHtml}
   ${withIcons(location)}
   ${withIcons(footer)}
-  ${withIcons(bookModal)}
+  ${bookModalHtml}
   ${withIcons(contactModal)}
 `;
 
