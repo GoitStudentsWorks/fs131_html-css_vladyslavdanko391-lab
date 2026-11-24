@@ -19,6 +19,9 @@ import bookModal from "../partials/book-modal.html?raw";
 import contactModal from "../partials/contact-modal.html?raw";
 import scrollUp from "../partials/scroll-up.html?raw";
 
+import { initBooks } from "./books/init-books.js";
+import { initFeedbacks } from "./feedbacks.js";
+
 const withIcons = (html) => html.replaceAll("/icons.svg", iconsUrl);
 
 const headerHtml = withIcons(header);
@@ -36,17 +39,25 @@ if (!app) {
 
 app.innerHTML = `
   ${headerHtml}
-  ${hero}
-  ${books}
-  ${feedbacks}
+  ${withIcons(hero)}
+  ${withIcons(books)}
+  ${withIcons(feedbacks)}
   ${eventsHtml}
-  ${article}
-  ${location}
-  ${footer}
-  ${bookModal}
-  ${contactModal}
+  ${withIcons(article)}
+  ${withIcons(location)}
+  ${withIcons(footer)}
+  ${withIcons(bookModal)}
+  ${withIcons(contactModal)}
   ${withIcons(scrollUp)}
 `;
 
-// Ці модулі шукають елементи в DOM, тому запускаємо їх після вставлення partials.
-await Promise.all([import("./header.js"), import("./events.js"), import("./scroll-up.js")]);
+initBooks();
+initFeedbacks();
+
+await Promise.all([
+  import("./header.js"),
+  import("./events.js"),
+  import("./footer.js"),
+  import("./hero.js"),
+  import("./scroll-up.js"),
+]);

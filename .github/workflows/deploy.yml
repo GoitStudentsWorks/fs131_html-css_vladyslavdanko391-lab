@@ -24,12 +24,28 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Check project files
+        run: |
+          pwd
+          ls -la
+          find . -maxdepth 3 \( -name "package.json" -o -name "package-lock.json" \) -print
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
+          
+      - name: Check npm configuration
+        run: |
+          npm --version
+          npm config get package-lock
 
+      - name: Validate lockfile
+        run: |
+          node -e "const lock = require('./package-lock.json'); console.log('Lockfile version:', lock.lockfileVersion); console.log('Packages:', Object.keys(lock.packages || {}).length)"
+          npm ci --verbose
+          
       - name: Install dependencies
         run: npm ci
 
