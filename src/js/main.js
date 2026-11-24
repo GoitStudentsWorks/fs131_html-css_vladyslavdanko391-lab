@@ -73,7 +73,7 @@ if (!app) {
 
 app.innerHTML = `
   ${headerHtml}
-  ${withIcons(hero)}
+  ${heroHtml}
   ${withIcons(books)}
   ${feedbacksHtml}
   ${eventsHtml}
