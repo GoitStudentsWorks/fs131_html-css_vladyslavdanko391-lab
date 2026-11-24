@@ -3,6 +3,14 @@ import iconsUrl from "../assets/icons/icons.svg?url";
 import midnightImage from "../img/midnight.jpg";
 import bookCoverImage from "../img/book-cover.jpg";
 import childrenImage from "../img/children.jpg";
+import articleImage from "../img/article/articleimg.jpg";
+import articleImage2x from "../img/article/articleimg@2.jpg";
+import janeAvatar from "../img/feedbacks/jane-doe.png";
+import johnAvatar from "../img/feedbacks/john-smith.png";
+import emilyJohnsonAvatar from "../img/feedbacks/emily-johnson.png";
+import michaelAvatar from "../img/feedbacks/michael-wilson.png";
+import emilyAvatar from "../img/feedbacks/emily-davis.png";
+import danielAvatar from "../img/feedbacks/daniel-lee.png";
 
 import "../css/reset.css";
 import "../css/index.css";
@@ -30,6 +38,18 @@ const eventsHtml = withIcons(events)
   .replaceAll("/src/img/book-cover.jpg", bookCoverImage)
   .replaceAll("/src/img/children.jpg", childrenImage);
 
+const feedbacksHtml = withIcons(feedbacks)
+  .replaceAll("/src/img/feedbacks/jane-doe.png", janeAvatar)
+  .replaceAll("/src/img/feedbacks/john-smith.png", johnAvatar)
+  .replaceAll("/src/img/feedbacks/emily-johnson.png", emilyJohnsonAvatar)
+  .replaceAll("/src/img/feedbacks/michael-wilson.png", michaelAvatar)
+  .replaceAll("/src/img/feedbacks/emily-davis.png", emilyAvatar)
+  .replaceAll("/src/img/feedbacks/daniel-lee.png", danielAvatar);  
+
+const articleHtml = withIcons(article)
+  .replaceAll("./src/img/article/articleimg.jpg", articleImage)
+  .replaceAll("./src/img/article/articleimg@2.jpg", articleImage2x);
+
 const app = document.querySelector("#app");
 
 if (!app) {
@@ -40,9 +60,9 @@ app.innerHTML = `
   ${headerHtml}
   ${withIcons(hero)}
   ${withIcons(books)}
-  ${withIcons(feedbacks)}
+  ${feedbacksHtml}
   ${eventsHtml}
-  ${withIcons(article)}
+  ${articleHtml}
   ${withIcons(location)}
   ${withIcons(footer)}
   ${withIcons(bookModal)}

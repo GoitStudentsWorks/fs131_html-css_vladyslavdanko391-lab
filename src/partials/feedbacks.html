@@ -1,66 +1,167 @@
-<h2 class="feedbacks-title">Customer Feedbacks</h2>
+<section class="feedbacks" id="feedback">
+  <div class="feedbacks-container">
+    <h2 class="feedbacks-title">Customer Feedbacks</h2>
 
-<p class="feedbacks-subtitle">See what our readers are saying about us!</p>
+    <p class="feedbacks-subtitle">
+      See what our readers are saying about us!
+    </p>
 
-<div class="feedbacks-content">
-  <p class="feedbacks-text">
-    Great selection, fast delivery, and beautifully packaged books. My go-to
-    store for weekend reads!
-  </p>
+    <div class="feedbacks-swiper">
+      <ul class="feedbacks-list swiper-wrapper">
 
-  <div class="feedbacks-user">
-    <img
-      class="feedbacks-avatar"
-      src="https://placehold.co/56x56"
-      alt="Jane Doe"
-    />
+        <!-- Feedback 1 -->
+        <li class="feedbacks-content swiper-slide">
+          <p class="feedbacks-text">
+            Great selection, fast delivery, and beautifully packaged books.
+            My go-to store for weekend reads!
+          </p>
 
-    <div class="feedbacks-user-info">
-      <h3 class="feedbacks-name">Jane Doe</h3>
-      <p class="feedbacks-role">Book Lover, Reader</p>
+          <div class="feedbacks-user">
+            <img
+              class="feedbacks-avatar"
+              src="/src/img/feedbacks/jane-doe.png"
+              alt="Jane Doe"
+              loading="lazy"
+            />
+            <div class="feedbacks-user-info">
+              <h3 class="feedbacks-name">Jane Doe</h3>
+              <p class="feedbacks-role">Book Lover, Reader</p>
+            </div>
+          </div>
+        </li>
+
+        <!-- Feedback 2 -->
+        <li class="feedbacks-content swiper-slide">
+          <p class="feedbacks-text">
+            I love discovering new books here. The atmosphere is wonderful,
+            and the selection is amazing!
+          </p>
+
+          <div class="feedbacks-user">
+            <img
+              class="feedbacks-avatar"
+              src="/src/img/feedbacks/john-smith.png"
+              alt="John Smith"
+              loading="lazy"
+            />
+            <div class="feedbacks-user-info">
+              <h3 class="feedbacks-name">John Smith</h3>
+              <p class="feedbacks-role">Editor, BookMag</p>
+            </div>
+          </div>
+        </li>
+
+        <!-- Feedback 3 -->
+        <li class="feedbacks-content swiper-slide">
+          <p class="feedbacks-text">
+            A wonderful bookstore with friendly staff and an excellent
+            collection of books.
+          </p>
+
+          <div class="feedbacks-user">
+            <img
+              class="feedbacks-avatar"
+              src="/src/img/feedbacks/emily-johnson.png"
+              alt="Emily Johnson"
+              loading="lazy"
+            />
+            <div class="feedbacks-user-info">
+              <h3 class="feedbacks-name">Emily Johnson</h3>
+              <p class="feedbacks-role">Author, Novelist</p>
+            </div>
+          </div>
+        </li>
+
+        <!-- Feedback 4 -->
+        <li class="feedbacks-content swiper-slide">
+          <p class="feedbacks-text">
+            This bookstore has become my favorite place to find new authors.
+            Every order arrives quickly and carefully packed!
+          </p>
+
+          <div class="feedbacks-user">
+            <img
+              class="feedbacks-avatar"
+              src="/src/img/feedbacks/michael-wilson.png"
+              alt="Michael Wilson"
+              loading="lazy"
+            />
+            <div class="feedbacks-user-info">
+              <h3 class="feedbacks-name">Michael Wilson</h3>
+              <p class="feedbacks-role">Regular Reader</p>
+            </div>
+          </div>
+        </li>
+
+        <!-- Feedback 5 -->
+        <li class="feedbacks-content swiper-slide">
+          <p class="feedbacks-text">
+            I always find something interesting here. The book selection is
+            fantastic, and the service is excellent!
+          </p>
+
+          <div class="feedbacks-user">
+            <img
+              class="feedbacks-avatar"
+              src="/src/img/feedbacks/emily-davis.png"
+              alt="Emily Davis"
+              loading="lazy"
+            />
+            <div class="feedbacks-user-info">
+              <h3 class="feedbacks-name">Emily Davis</h3>
+              <p class="feedbacks-role">Book Enthusiast</p>
+            </div>
+          </div>
+        </li>
+
+        <!-- Feedback 6 -->
+        <li class="feedbacks-content swiper-slide">
+          <p class="feedbacks-text">
+            A great online bookstore with a beautiful collection.
+            I have already recommended it to all my friends!
+          </p>
+
+          <div class="feedbacks-user">
+            <img
+              class="feedbacks-avatar"
+              src="/src/img/feedbacks/daniel-lee.png"
+              alt="Daniel Lee"
+              loading="lazy"
+            />
+            <div class="feedbacks-user-info">
+              <h3 class="feedbacks-name">Daniel Lee</h3>
+              <p class="feedbacks-role">Book Lover</p>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="feedbacks-controls">
+      <div
+        class="feedbacks-dots swiper-pagination"
+        aria-label="Feedback navigation"
+      ></div>
+
+      <div class="feedbacks-arrows">
+        <button
+          class="feedbacks-arrow feedbacks-arrow-left"
+          type="button"
+          aria-label="Previous feedback"
+          disabled
+        >
+          &#8592;
+        </button>
+
+        <button
+          class="feedbacks-arrow feedbacks-arrow-right"
+          type="button"
+          aria-label="Next feedback"
+        >
+          &#8594;
+        </button>
+      </div>
     </div>
   </div>
-</div>
-
-<div class="feedbacks-controls">
-  <div class="feedbacks-dots">
-    <button
-      class="feedbacks-dot active"
-      type="button"
-      aria-label="Feedback 1"
-    ></button>
-    <button
-      class="feedbacks-dot"
-      type="button"
-      aria-label="Feedback 2"
-    ></button>
-    <button
-      class="feedbacks-dot"
-      type="button"
-      aria-label="Feedback 3"
-    ></button>
-    <button
-      class="feedbacks-dot"
-      type="button"
-      aria-label="Feedback 4"
-    ></button>
-  </div>
-
-  <div class="feedbacks-arrows">
-    <button
-      class="feedbacks-arrow feedbacks-arrow-left"
-      type="button"
-      aria-label="Previous feedback"
-    >
-      &#8592;
-    </button>
-
-    <button
-      class="feedbacks-arrow feedbacks-arrow-right"
-      type="button"
-      aria-label="Next feedback"
-    >
-      &#8594;
-    </button>
-  </div>
-</div>
+</section>
