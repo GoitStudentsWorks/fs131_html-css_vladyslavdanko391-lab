@@ -5,9 +5,7 @@
     justify-content: center;
     flex-direction: column;
     gap: 32px;
-
-    margin-bottom: 64px;
-    margin-top: 64px;
+    margin-block: 64px;
 }
 
 .article-text-container {
