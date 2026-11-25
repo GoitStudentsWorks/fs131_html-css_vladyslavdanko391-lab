@@ -1,122 +1,138 @@
 # 📚 Booksy
 
-**Booksy** — это адаптивный одностраничный сайт книжного магазина. Он включает каталог книг с фильтрацией по категориям, подробный просмотр книги в модальном окне, отзывы покупателей, предстоящие мероприятия с регистрацией, а также контактную информацию и карту.
+Booksy is a responsive, single-page online bookstore website. It allows users to browse books by category, view detailed book information, explore customer reviews, discover upcoming events, and find the bookstore's contact information and location.
 
----
+## 📖 About the Project
 
-## 📖 О проекте
+Booksy is a team project developed based on a Figma design and a technical specification.
 
-Booksy — командный проект, созданный на основе макета в Figma и технического задания. Его основная цель — **позволить посетителям просматривать каталог книжного магазина, быстро находить книги по категориям, изучать их подробную информацию и оформлять демонстрационные заказы**, а также узнавать о мероприятиях магазина и находить его контактные данные.
+The main goal of the project is to provide users with a convenient way to explore a bookstore's catalog, find books by category, view detailed information, and interact with demo shopping features.
 
-Данные о книгах загружаются из внешнего REST API, поэтому каталог не содержит жёстко прописанных данных и всегда остаётся актуальным.
+Book and category data are retrieved from an external REST API rather than being hardcoded into the application.
 
-### Основные возможности
+## ✨ Features
 
-- **Адаптивная вёрстка** с использованием подхода *Mobile First* (медиазапросы `min-width`): поддержка экранов от 320px, адаптация от 375px, планшеты от 768px и компьютеры от 1440px.
-- **Header (Шапка сайта)** с логотипом и навигацией по якорным ссылкам. На мобильных устройствах полноэкранное бургер-меню блокирует прокрутку страницы во время открытия и закрывается при нажатии на ссылку, кнопку закрытия или клавишу `Esc`.
-- **Hero (Главный экран)** со слайдером Swiper: кнопки управления стрелками, поддержка клавиатуры и автоматическое отключение кнопок при достижении начала или конца списка. Ссылка *Shop Now!* ведёт к разделу Books.
-- **Books (Каталог книг)** — каталог, работающий на основе данных с сервера:
-  - фильтрация по категориям (список категорий также загружается из API);
-  - счётчик «Показано X из Y»;
-  - 24 книги на страницу для планшетов и компьютеров и 10 для мобильных устройств;
-  - кнопка **Show More (Показать ещё)**, загружающая дополнительно 4 книги за одно нажатие и скрывающаяся, когда список заканчивается;
-  - понятные сообщения при отсутствии книг в категории или ошибках загрузки.
-- **Book Modal (Модальное окно книги)** — фотография книги, название, автор, цена, выбор количества с автоматическим пересчётом итоговой стоимости и проверкой введённых данных, аккордеон с разделами *Details / Shipping / Returns*, а также кнопки:
-  - **Add To Cart** — добавляет демонстрационный заказ в консоль и показывает уведомление;
-  - **Buy Now** — отображает подтверждение покупки.
-- **Feedbacks (Отзывы)** — горизонтальный слайдер с отзывами покупателей (Swiper), стрелками, точками пагинации и управлением с клавиатуры.
-- **Events (Мероприятия)** — слайдер мероприятий. Кнопка **Register (Зарегистрироваться)** открывает модальное окно регистрации на выбранное мероприятие.
-- **Article (Статья)** — небольшая история о книжном магазине с изображением.
-- **Location (Местоположение)** — кликабельные ссылки на электронную почту и номер телефона, а также встроенная карта Google Maps.
-- **Footer (Подвал сайта)** — логотип, якорные ссылки и форма подписки *Sign Up* с проверкой электронной почты.
-- Все модальные окна закрываются нажатием на кнопку закрытия, кликом по фону или клавишей `Esc`. Во время их открытия прокрутка основной страницы блокируется.
+- **Responsive Design:** Mobile First approach with support for screens from 320px, including mobile devices, tablets, and desktop screens.
+- **Header:** Navigation with anchor links and a full-screen mobile menu. The menu supports keyboard interaction, closes with the Escape key, and prevents background scrolling while open.
+- **Hero:** Image slider powered by Swiper, with navigation arrows and keyboard controls.
+- **Books Catalog:**
+  - Dynamic book and category loading from the API.
+  - Filtering books by category.
+  - Display counter showing the number of visible books.
+  - Responsive pagination: 10 books on mobile devices and 24 on tablets and desktops.
+  - Show More button that loads 4 additional books per click.
+  - Loading, empty-state, and error messages.
+- **Book Details Modal:**
+  - Book cover, title, author, and price.
+  - Quantity selector with automatic total price calculation.
+  - Accordion sections: Details, Shipping, and Returns.
+  - Demo Add To Cart and Buy Now actions.
+- **Feedbacks:** Customer review slider with navigation arrows, pagination, and keyboard support.
+- **Events:** Event slider with a registration modal for selected events.
+- **Article:** A short story about the bookstore.
+- **Location:** Clickable email and phone links, along with an embedded Google Maps location.
+- **Footer:** Navigation links and an email subscription form with validation.
 
----
+All modal windows can be closed using the close button, clicking outside the modal, or pressing Escape. Background scrolling is disabled while a modal is open.
 
-## 🛠 Технологический стек
+## 🛠 Tech Stack
 
-| Технология | Назначение |
+| Technology | Purpose |
 |---|---|
-| HTML5 | Семантическая разметка, списки `ul`, формы, элемент `dialog` для модального окна книги |
-| CSS3 | Стилизация по подходу Mobile First, отдельная таблица стилей для каждой секции, CSS Reset |
-| JavaScript (ES Modules) | Вся логика проекта: запросы к API, отрисовка списков, модальные окна и слайдеры |
-| [Vite](https://vite.dev/) 8 | Локальный сервер разработки и сборка проекта |
-| [Swiper](https://swiperjs.com/) 14 | Слайдеры в секциях Hero и Feedbacks |
-| [accordion-js](https://www.npmjs.com/package/accordion-js) 4 | Аккордеон в модальном окне книги |
-| Google Fonts (Rubik) | Типографика |
-| SVG sprite | Загрузка всех иконок через `icons.svg` |
-| GitHub Actions + GitHub Pages | Автоматическая сборка и публикация сайта |
-| [Books API](https://books-backend.p.goit.global/books) | Источник данных о книгах и категориях |
+| HTML5 | Semantic markup, forms, lists, and the dialog element |
+| CSS3 | Responsive styling, Mobile First approach, CSS Reset |
+| JavaScript (ES Modules) | Application logic, API requests, DOM manipulation, modals, and sliders |
+| Vite 8 | Development server and production build |
+| Swiper 14 | Sliders in the Hero and Feedbacks sections |
+| accordion-js 4 | Accordion functionality in the book details modal |
+| Google Fonts (Rubik) | Typography |
+| SVG Sprite | Centralized icon management |
+| GitHub Actions | Automated build and deployment |
+| GitHub Pages | Website hosting |
+| Books API | External source of book and category data |
 
----
+## 🚀 Getting Started
 
-## 🚀 Запуск проекта
+### Requirements
 
-### Требования
+- Node.js (version 22 is used in CI).
+- npm (included with Node.js).
 
-- [Node.js](https://nodejs.org/) (актуальная версия; в CI используется **Node 22**).
-- npm (устанавливается вместе с Node.js).
+### Installation
 
-### Установка
+Clone the repository:
 
-1. Клонируйте репозиторий и перейдите на ветку `develop`:
+```bash
+git clone https://github.com/vladyslavdanko391-lab/booksy.git
+cd booksy
+git checkout main
+```
 
-   ```bash
-   git clone https://github.com/vladyslavdanko391-lab/booksy.git
-   cd booksy
-   git checkout develop
-   ```
+Install dependencies:
 
-2. Установите зависимости:
+```bash
+npm install
+```
 
-   ```bash
-   npm install
-   ```
+Start the development server:
 
-3. Запустите сервер разработки:
+```bash
+npm run dev
+```
 
-   ```bash
-   npm run dev
-   ```
+Vite will display the local development URL in the terminal, usually:
 
-   Vite выведет локальный адрес в терминале (обычно `http://localhost:5173/booksy/`). Откройте его в браузере.
+```text
+http://localhost:5173/booksy/
+```
 
-### Доступные команды
+Open the URL in your browser.
 
-| Команда | Описание |
+### Available Scripts
+
+| Command | Description |
 |---|---|
-| `npm run dev` | Запускает сервер разработки с автоматическим обновлением страницы |
-| `npm run build` | Создаёт production-сборку проекта в папке `dist/` |
-| `npm run preview` | Запускает локальный сервер для просмотра production-сборки |
+| `npm run dev` | Starts the development server with hot module replacement |
+| `npm run build` | Creates an optimized production build in the `dist/` directory |
+| `npm run preview` | Starts a local server to preview the production build |
 
-> ℹ️ В файле `vite.config.js` указано `base: '/booksy/'`, поэтому сайт работает по пути `/booksy/` как локально, так и на GitHub Pages.
+**Note:** The `vite.config.js` file defines `base: '/booksy/'`, so the application is configured to run under the `/booksy/` path on both the local development server and GitHub Pages.
 
----
+## 🌍 Deployment
 
-## 🌍 Публикация проекта
+The website is automatically built and deployed using GitHub Actions.
 
-Публикация сайта автоматизирована с помощью GitHub Actions (`.github/workflows/deploy.yml`).
+The workflow is configured in:
 
-Процесс запускается автоматически при каждом отправлении изменений в ветку `develop` (или вручную через `workflow_dispatch`) и выполняет следующие действия:
+```text
+.github/workflows/deploy.yml
+```
 
-1. Устанавливает Node.js 22 и зависимости (`npm ci`).
-2. Запускает `npm run build`.
-3. Публикует содержимое папки `dist/` на GitHub Pages.
+Deployment is triggered automatically whenever changes are pushed to the `main` branch. It can also be started manually using `workflow_dispatch`.
 
----
+The workflow performs the following steps:
 
-## 🗂 Структура проекта
+1. Sets up Node.js 22.
+2. Installs dependencies using `npm ci`.
+3. Builds the project using `npm run build`.
+4. Deploys the contents of the `dist/` directory to GitHub Pages.
+
+## 🗂 Project Structure
 
 ```text
 booksy/
-├── .github/workflows/deploy.yml   # автоматическая сборка и публикация на GitHub Pages
-├── index.html                     # единственная HTML-страница с пустым контейнером #app
-├── vite.config.js                 # конфигурация Vite (base: '/booksy/')
-├── package.json                   # зависимости и npm-скрипты
+├── .github/
+│   └── workflows/
+│       └── deploy.yml
+├── index.html
+├── vite.config.js
+├── package.json
 └── src/
-    ├── assets/icons/icons.svg     # SVG-спрайт с иконками
-    ├── img/                       # изображения (hero, отзывы, статья, обложки книг, favicon)
-    ├── partials/                  # HTML-разметка каждой секции и модального окна
+    ├── assets/
+    │   └── icons/
+    │       └── icons.svg
+    ├── img/
+    ├── partials/
     │   ├── header.html
     │   ├── hero.html
     │   ├── books.html
@@ -128,18 +144,19 @@ booksy/
     │   ├── book-modal.html
     │   └── contact-modal.html
     ├── css/
-    │   ├── reset.css, base.css    # сброс стилей и базовые стили
-    │   ├── index.css              # подключает стили всех секций
-    │   └── partials/              # отдельная таблица стилей для каждой секции
+    │   ├── reset.css
+    │   ├── base.css
+    │   ├── index.css
+    │   └── partials/
     └── js/
-        ├── main.js                # точка входа: собирает страницу и запускает все модули
-        ├── api.js                 # запросы к backend API
-        ├── header.js              # бургер-меню
-        ├── hero.js                # слайдер Hero (Swiper)
-        ├── feedbacks.js           # слайдер отзывов (Swiper)
-        ├── events.js              # слайдер мероприятий и модальное окно регистрации
-        ├── footer.js              # форма подписки в подвале сайта
-        └── books/                 # вся логика каталога книг
+        ├── main.js
+        ├── api.js
+        ├── header.js
+        ├── hero.js
+        ├── feedbacks.js
+        ├── events.js
+        ├── footer.js
+        └── books/
             ├── init-books.js
             ├── config.js
             ├── state.js
@@ -153,63 +170,77 @@ booksy/
             └── toast.js
 ```
 
----
+## 🧩 Project Architecture
 
-## 🧩 Принцип работы проекта
+The `index.html` file contains the main application container:
 
-Файл `index.html` содержит только пустой элемент `<div id="app">`.
+```html
+<div id="app"></div>
+```
 
-Файл `src/js/main.js` импортирует HTML-разметку каждой секции из папки `src/partials/` в виде текста, обрабатывает пути к изображениям и иконкам, вставляет всю разметку в `#app`, а затем инициализирует слайдеры, каталог книг, меню и формы.
+The `src/js/main.js` file acts as the application entry point. It imports HTML partials from `src/partials/` as raw strings, processes asset paths, inserts the markup into the `#app` container, and initializes the application's JavaScript modules.
 
-### JavaScript-модули
+### JavaScript Modules
 
-| Файл | Назначение |
+| File | Responsibility |
 |---|---|
-| `main.js` | Собирает страницу из HTML-фрагментов, подключает стили и инициализирует все модули |
-| `api.js` | Единый модуль для запросов к серверу: получение категорий, популярных книг, книг по категориям и информации о книге по её `id` |
-| `header.js` | Открытие и закрытие мобильного меню, блокировка прокрутки, закрытие по `Esc` и при изменении размера окна до десктопного |
-| `hero.js` | Слайдер главного экрана со стрелками и управлением с клавиатуры |
-| `feedbacks.js` | Слайдер отзывов: 1 / 2 / 3 карточки в зависимости от ширины экрана, стрелки и точки пагинации |
-| `events.js` | Слайдер мероприятий (стрелки, точки, свайпы) и модальное окно регистрации (открытие, закрытие, отправка формы; данные выводятся в консоль) |
-| `footer.js` | Проверка электронной почты в форме подписки и отображение сообщений о результате |
+| `main.js` | Assembles the page and initializes application modules |
+| `api.js` | Centralizes requests to the Books API |
+| `header.js` | Handles mobile navigation, menu interactions, and scroll locking |
+| `hero.js` | Initializes the Hero slider with navigation and keyboard controls |
+| `feedbacks.js` | Manages the customer reviews slider and responsive slide behavior |
+| `events.js` | Handles the events slider and registration modal |
+| `footer.js` | Validates the newsletter subscription form |
 
-### Модуль каталога (`js/books/`)
+### Books Module (`js/books/`)
 
-| Файл | Назначение |
+The books module contains the catalog functionality, divided into smaller modules:
+
+| File | Responsibility |
 |---|---|
-| `init-books.js` | Точка входа модуля: инициализирует элементы, назначает обработчики событий, загружает категории и книги |
-| `config.js` | Константы: количество книг на странице (24 / 10), шаг кнопки Show More (4), максимальное количество книг (99), длительность отображения уведомления |
-| `state.js` | Общее состояние: загруженные книги, количество отображаемых книг, текущая открытая книга |
-| `elements.js` | Все DOM-элементы блока в одном объекте `els` |
-| `helpers.js` | Форматирование названий и цен, определение количества книг на странице, объединение книг из всех категорий без дубликатов |
-| `books.js` | Отрисовка карточек, счётчик «Показано X из Y», кнопка Show More и обработка ошибок |
-| `filter.js` | Загрузка категорий, выбор категории и фильтр в виде выпадающего списка |
-| `modal.js` | Открытие и заполнение модального окна книги, аккордеон, закрытие (кнопка, фон, `Esc`) |
-| `quantity.js` | Счётчик количества книг, проверка введённых данных и расчёт итоговой стоимости |
-| `order.js` | Логика кнопок Add To Cart и Buy Now |
-| `toast.js` | Уведомления, отображаемые поверх модального окна |
+| `init-books.js` | Initializes the catalog, event listeners, categories, and books |
+| `config.js` | Stores application constants and configuration |
+| `state.js` | Manages the catalog state |
+| `elements.js` | Collects and organizes DOM elements |
+| `helpers.js` | Provides formatting and utility functions |
+| `books.js` | Renders book cards, updates counters, and handles loading states |
+| `filter.js` | Loads categories and manages category filtering |
+| `modal.js` | Handles the book details modal and accordion |
+| `quantity.js` | Manages book quantity and total price calculation |
+| `order.js` | Handles demo shopping actions |
+| `toast.js` | Displays notification messages |
 
-### Backend API
+## 🔌 Backend API
 
-Базовый URL: `https://books-backend.p.goit.global/books`
+The application uses an external REST API to retrieve book data.
 
-| Endpoint | Описание |
+**Base URL:**
+
+```text
+https://books-backend.p.goit.global/books
+```
+
+| Endpoint | Description |
 |---|---|
-| `/category-list` | Список категорий книг |
-| `/top-books` | Популярные книги из всех категорий |
-| `/category?category=<name>` | Книги определённой категории |
-| `/<bookId>` | Подробная информация о книге |
+| `/category-list` | Retrieves the list of book categories |
+| `/top-books` | Retrieves popular books from all categories |
+| `/category?category=<name>` | Retrieves books from a specific category |
+| `/<bookId>` | Retrieves detailed information about a book |
 
----
+## ℹ️ Notes
 
-## ℹ️ Примечания
+Some features are implemented for demonstration purposes:
 
-- Форма регистрации на мероприятия и форма подписки на рассылку — **демонстрационные реализации**: данные никуда не отправляются (регистрации на мероприятия выводятся в консоль браузера). Для полноценной работы потребуется backend.
-- Кнопки **Add To Cart** и **Buy Now** также являются демонстрационными действиями: корзина не сохраняется, отображается только уведомление.
-- Навигация сайта осуществляется с помощью якорных ссылок на секции: `#books`, `#feedback`, `#events`, `#article`, `#location`.
+- Event registration data is displayed in the browser console and is not sent to a backend.
+- Newsletter subscription data is not stored or submitted to a server.
+- Add To Cart and Buy Now buttons demonstrate user interactions but do not process real purchases or maintain a shopping cart.
 
----
+Full functionality for these features would require additional backend integration.
 
-## 👥 Команда
+Website navigation uses anchor links to the following sections:
 
-Booksy был разработан в рамках командного проекта.
+`#books`, `#feedback`, `#events`, `#article`, `#location`.
+
+## 👥 Team
+
+Booksy was developed as a collaborative team project.
