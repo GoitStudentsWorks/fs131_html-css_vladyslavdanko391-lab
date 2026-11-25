@@ -241,6 +241,16 @@ Website navigation uses anchor links to the following sections:
 
 `#books`, `#feedback`, `#events`, `#article`, `#location`.
 
-## 👥 Team
+## 👥 Team -- WebForge -- 9 people
+
+- Team Leader -- Vladyslav -- vladyslavdanko391-lab
+- Scrum Master -- Olga -- OlgaYakovleva2011
+- Develop -- Pavlo -- Pavlo-Work
+- Develop -- Viktoria -- vikauvarova
+- Develop -- Sofia -- SofiiiaSk
+- Develop -- Eva -- 2006112014a-ai
+- Develop -- Ivan -- Ivan-Kyznetsov
+- Develop -- Sergii -- slepecsergejj
+- Develop -- Nazarii -- nazariisaul
 
 Booksy was developed as a collaborative team project.
