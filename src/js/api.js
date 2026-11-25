@@ -1,4 +1,4 @@
-const BASE_URL = 'https://books-backend.p.goit.global/books';
+const BASE_URL = 'https://books-backend-v2.b.goit.study/books';
 
 // Один спільний запит: перевіряє відповідь і повертає JSON
 async function request(path) {
