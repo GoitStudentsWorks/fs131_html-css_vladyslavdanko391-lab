@@ -1,4 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="icon-arrow-up" viewBox="0 0 24 24">
+    <path d="M11 8.414V18h2V8.414l4.293 4.293 1.414-1.414L12 4.586l-6.707 6.707 1.414 1.414L11 8.414Z" fill="currentColor" />
+  </symbol>
+
   <symbol id="icon-arrow-left" viewBox="0 0 24 24">
     <path d="M12.707 17.293L8.414 13H18V11H8.414L12.707 6.70697L11.293 5.29297L4.586 12L11.293 18.707L12.707 17.293Z" fill="#0B0500" />
   </symbol>
