@@ -1,65 +1,60 @@
-const feedbacks = [
-  {
-    text: "Great selection, fast delivery, and beautifully packaged books. My go-to store for weekend reads!",
-    name: "Jane Doe",
-    role: "Book Lover, Reader",
-  },
-  {
-    text: "I love discovering new books here. The atmosphere is wonderful, and the selection is amazing!",
-    name: "John Smith",
-    role: "Book Enthusiast",
-  },
-  {
-    text: "A wonderful bookstore with friendly staff and an excellent collection of books.",
-    name: "Anna Brown",
-    role: "Regular Customer",
-  },
-];
+
+import Swiper from 'swiper';
+import { Navigation, Pagination, Keyboard } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 export function initFeedbacks() {
-  const feedbackText = document.querySelector(".feedbacks-text");
-  const feedbackName = document.querySelector(".feedbacks-name");
-  const feedbackRole = document.querySelector(".feedbacks-role");
+  const swiperElement = document.querySelector('.feedbacks-swiper');
 
-  const prevBtn = document.querySelector(".feedbacks-arrow-left");
-  const nextBtn = document.querySelector(".feedbacks-arrow-right");
-  const dots = document.querySelectorAll(".feedbacks-dot");
-
-  if (!feedbackText || !feedbackName || !feedbackRole || !prevBtn || !nextBtn) {
+  if (!swiperElement) {
+    console.error('Feedbacks: .feedbacks-swiper not found');
     return;
   }
 
-  let currentIndex = 0;
+  const container = swiperElement.closest('.feedbacks');
+  const prevButton = container.querySelector('.feedbacks-arrow-left');
+  const nextButton = container.querySelector('.feedbacks-arrow-right');
+  const pagination = container.querySelector('.feedbacks-dots');
 
-  function showFeedback(index) {
-    const feedback = feedbacks[index];
+  new Swiper(swiperElement, {
+    modules: [Navigation, Pagination, Keyboard],
 
-    feedbackText.textContent = feedback.text;
-    feedbackName.textContent = feedback.name;
-    feedbackRole.textContent = feedback.role;
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    spaceBetween: 16,
 
-    dots.forEach((dot, i) => {
-      dot.classList.toggle("active", i === index);
-    });
-  }
+    speed: 300,
+    loop: false,
 
-  nextBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % feedbacks.length;
-    showFeedback(currentIndex);
+    navigation: {
+      prevEl: prevButton,
+      nextEl: nextButton,
+    },
+
+    pagination: {
+      el: pagination,
+      clickable: true,
+    },
+
+    keyboard: {
+      enabled: true,
+      onlyInViewport: true,
+    },
+
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        slidesPerGroup: 1,
+        spaceBetween: 24,
+      },
+
+      1024: {
+        slidesPerView: 3,
+        slidesPerGroup: 1,
+        spaceBetween: 24,
+      },
+    },
   });
-
-  prevBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + feedbacks.length) % feedbacks.length;
-
-    showFeedback(currentIndex);
-  });
-
-  dots.forEach((dot, index) => {
-    dot.addEventListener("click", () => {
-      currentIndex = index;
-      showFeedback(currentIndex);
-    });
-  });
-
-  showFeedback(currentIndex);
 }

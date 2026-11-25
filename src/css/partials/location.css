@@ -16,8 +16,7 @@
 }
 
 .location-description {
-    font-size: 18px;
-    
+    font-size: 18px; 
 }
 
 .location-contact-info-list {
@@ -95,7 +94,7 @@
     }
 }
 
-@media (min-width: 1154px) {
+@media (min-width: 1440px) {
     .location-info {
         gap: 80px; 
         margin-top: 80px;
@@ -113,8 +112,7 @@
         max-width: 1312px;
         height: 738px;
         margin-top: 80px;
-        margin-bottom: 106px;
-     
+        margin-bottom: 106px;    
         overflow: hidden;
     }
 }
