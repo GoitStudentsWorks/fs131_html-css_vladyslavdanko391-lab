@@ -1,31 +1,25 @@
-
 /* ===== CUSTOMER FEEDBACKS ===== */
-
 .feedbacks {
   width: 100%;
-  padding: 40px 16px;
-  background-color: #fff;
+  padding: 64px 16px;
+  background: #fceee6;
   box-sizing: border-box;
 }
 
-.feedbacks-container {
-  width: 100%;
-  max-width: 1312px;
-  margin: 0 auto;
-  padding: 0;
-  box-sizing: border-box;
+.feedbacks-info {
+  margin-bottom: 80px;
 }
 
 .feedbacks-title {
-  font-size: 32px;
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 36px;
   line-height: 1.2;
   margin: 0 0 24px;
   text-align: left;
 }
 
 .feedbacks-subtitle {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
   margin: 0;
   text-align: left;
@@ -87,8 +81,8 @@
 }
 
 .feedbacks-avatar {
-  width: 56px;
-  height: 56px;
+  width: 48px;
+  height: 48px;
   flex-shrink: 0;
   border-radius: 50%;
   object-fit: cover;
@@ -131,23 +125,39 @@
   height: 48px;
   border: none;
   border-radius: 0;
-  background: #e84a0e;
-  color: #fff;
+  background-color: #e15d05;
+  color: #ffffff;
   font-size: 20px;
   cursor: pointer;
   flex-shrink: 0;
-  transition: background-color 0.2s, opacity 0.2s;
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    opacity 0.2s;
 }
 
-.feedbacks-arrow:disabled {
-  background: #ccc;
-  opacity: 0.6;
+/* Hover / Focus */
+.feedbacks-arrow:not(:disabled):hover,
+.feedbacks-arrow:not(:disabled):focus-visible {
+  background-color: #fceee6;
+  color: #0b0500;
+}
+
+/* Active */
+.feedbacks-arrow:not(:disabled):active {
+  background-color: #5a2502;
+  color: #ffffff;
+}
+
+/* Disabled */
+.feedbacks-arrow:disabled,
+.feedbacks-arrow.swiper-button-disabled {
+  background-color: #e15d05;
+  color: #ffffff;
+  opacity: 0.2;
   cursor: not-allowed;
 }
 
-.feedbacks-arrow:not(:disabled):hover {
-  background: #c83e0b;
-}
 
 /* ===== PAGINATION ===== */
 
@@ -192,7 +202,7 @@
 
 /* ===== DESKTOP ===== */
 
-@media (min-width: 1024px) {
+@media (min-width: 1440px) {
   .feedbacks {
     padding: 80px 32px;
   }

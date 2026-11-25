@@ -56,7 +56,7 @@ html {
   z-index: 100;
   width: 100vw;
   height: 100dvh;
-  background-color: #ffffff;
+  background: #fceee6;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -89,10 +89,10 @@ html {
 .mobile-menu__nav {
   flex: 1;
 }
-
 .mobile-menu__list {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 24px;
 }
 

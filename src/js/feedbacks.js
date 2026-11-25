@@ -13,7 +13,7 @@ export function initFeedbacks() {
     return;
   }
 
-  const container = swiperElement.closest('.feedbacks-container');
+  const container = swiperElement.closest('.feedbacks');
   const prevButton = container.querySelector('.feedbacks-arrow-left');
   const nextButton = container.querySelector('.feedbacks-arrow-right');
   const pagination = container.querySelector('.feedbacks-dots');

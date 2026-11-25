@@ -1,3 +1,4 @@
+import { initFooter } from "./footer.js";
 import iconsUrl from "../assets/icons/icons.svg?url";
 
 import midnightImage from "../img/midnight.jpg";
@@ -11,8 +12,15 @@ import emilyJohnsonAvatar from "../img/feedbacks/emily-johnson.png";
 import michaelAvatar from "../img/feedbacks/michael-wilson.png";
 import emilyAvatar from "../img/feedbacks/emily-davis.png";
 import danielAvatar from "../img/feedbacks/daniel-lee.png";
+import janeAvatar2x from "../img/feedbacks/jane-doe@2x.png";
+import johnAvatar2x from "../img/feedbacks/john-smith@2x.png";
+import emilyJohnsonAvatar2x from "../img/feedbacks/emily-johnson@2x.png";
+import michaelAvatar2x from "../img/feedbacks/michael-wilson@2x.png";
+import emilyAvatar2x from "../img/feedbacks/emily-davis@2x.png";
+import danielAvatar2x from "../img/feedbacks/daniel-lee@2x.png";
 import coverPlaceholderImage from "../img/cover-placeholder.svg";
 
+import "modern-normalize/modern-normalize.css";
 import "../css/reset.css";
 import "../css/index.css";
 
@@ -70,7 +78,14 @@ const feedbacksHtml = withIcons(feedbacks)
   .replaceAll("/src/img/feedbacks/emily-johnson.png", emilyJohnsonAvatar)
   .replaceAll("/src/img/feedbacks/michael-wilson.png", michaelAvatar)
   .replaceAll("/src/img/feedbacks/emily-davis.png", emilyAvatar)
-  .replaceAll("/src/img/feedbacks/daniel-lee.png", danielAvatar);  
+  .replaceAll("/src/img/feedbacks/daniel-lee.png", danielAvatar) 
+  .replaceAll( "/src/img/feedbacks/jane-doe@2x.png",janeAvatar2x)
+  .replaceAll("/src/img/feedbacks/john-smith@2x.png", johnAvatar2x)
+  .replaceAll("/src/img/feedbacks/emily-johnson@2x.png", emilyJohnsonAvatar2x)
+  .replaceAll("/src/img/feedbacks/michael-wilson@2x.png", michaelAvatar2x)
+  .replaceAll("/src/img/feedbacks/emily-davis@2x.png", emilyAvatar2x)
+  .replaceAll("/src/img/feedbacks/daniel-lee@2x.png", danielAvatar2x);
+ 
 
 const articleHtml = withIcons(article)
   .replaceAll("./src/img/article/articleimg.jpg", articleImage)
@@ -84,8 +99,8 @@ if (!app) {
 
 app.innerHTML = `
   ${headerHtml}
-  ${booksHtml}
   ${heroHtml}
+  ${booksHtml}
   ${feedbacksHtml}
   ${eventsHtml}
   ${articleHtml}
@@ -97,10 +112,10 @@ app.innerHTML = `
 
 initBooks();
 initFeedbacks();
+initFooter();
 
 await Promise.all([
   import("./header.js"),
   import("./events.js"),
-  import("./footer.js"),
   import("./hero.js"),
 ]);

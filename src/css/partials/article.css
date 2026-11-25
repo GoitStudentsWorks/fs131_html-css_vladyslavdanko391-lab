@@ -1,11 +1,3 @@
-
-.article-container {
-    padding: 64px 16px;
-    margin: 0 auto;
-    max-width: 343px;
-    background-color: #fceee6;
-}
-
 .article {
     width: 100%;
     display: flex;
@@ -43,6 +35,8 @@
     overflow: hidden;
     min-width: 343px;
     height: 248px;
+
+    margin-bottom: 64px;
 }
 
 .article-img {
@@ -52,22 +46,12 @@
 }
 
 @media screen and (min-width: 768px) {
-    .article-container {
-        max-width: 704px;
-        padding: 64px 32px 64px 32px;
-    }
-
     .article-img-box {
         height: 474px
     }
 }
 
 @media screen and (min-width: 1440px) {
-    .article-container {
-        max-width: 1312px;
-        padding: 64px;
-    }
-
     .article {
         flex-direction: row;
         height: 474px;

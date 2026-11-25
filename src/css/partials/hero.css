@@ -182,16 +182,14 @@
   border-color: #b44a04;
 }
 
-@media only screen and (min-width: 768px) {
-  .hero-title-wrapper {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-  }
+.hero-title-wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 .hero-title {
-  width: 330px;
+  width: 100%;
+  max-width: 330px;
   font-weight: 600;
   font-size: 40px;
   line-height: 1.2;
@@ -199,16 +197,24 @@
   color: #0b0500;
 }
 
-@media only screen and (min-width: 768px) {
+@media (min-width: 768px) {
+  .hero-title-wrapper {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+
   .hero-title {
     width: 560px;
-    margin-right: auto;
+    max-width: 560px;
   }
 }
 
-@media only screen and (min-width: 1440px) {
+@media (min-width: 1440px) {
   .hero-title {
     width: fit-content;
+    max-width: none;
     font-size: 52px;
   }
 }
