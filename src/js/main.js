@@ -34,7 +34,10 @@ import location from "../partials/location.html?raw";
 import footer from "../partials/footer.html?raw";
 import bookModal from "../partials/book-modal.html?raw";
 import contactModal from "../partials/contact-modal.html?raw";
+
 import scrollUp from "../partials/scroll-up.html?raw";
+import loader from "../partials/loader.html?raw";
+
 
 import { initBooks } from "./books/init-books.js";
 import { initFeedbacks } from "./feedbacks.js";
@@ -55,7 +58,7 @@ const booksHtml = withIcons(books).replaceAll(
 );
 
 const bookModalHtml = withIcons(bookModal).replaceAll(
-  "./images/cover-placeholder.svg",
+  "./src/img/cover-placeholder.svg",
   coverPlaceholderImage,
 );
 
@@ -110,6 +113,7 @@ app.innerHTML = `
   ${bookModalHtml}
   ${withIcons(contactModal)}
   ${withIcons(scrollUp)}
+  ${loader}
 `;
 
 initBooks();
