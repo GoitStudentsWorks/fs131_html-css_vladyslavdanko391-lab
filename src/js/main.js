@@ -54,7 +54,7 @@ const booksHtml = withIcons(books).replaceAll(
 );
 
 const bookModalHtml = withIcons(bookModal).replaceAll(
-  "./images/cover-placeholder.svg",
+  "./src/img/cover-placeholder.svg",
   coverPlaceholderImage,
 );
 

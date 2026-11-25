@@ -1,7 +1,7 @@
 /* ===== CUSTOMER FEEDBACKS ===== */
 .feedbacks {
   width: 100%;
-  padding: 64px 16px;
+  padding-block: 64px;
   background: #fceee6;
   box-sizing: border-box;
 }
@@ -16,6 +16,9 @@
   line-height: 1.2;
   margin: 0 0 24px;
   text-align: left;
+  font-family: "Rubik", sans-serif;
+  letter-spacing: -0.01em;
+  color: #0b0500;
 }
 
 .feedbacks-subtitle {
@@ -186,10 +189,6 @@
 /* ===== TABLET ===== */
 
 @media (min-width: 768px) {
-  .feedbacks {
-    padding: 64px 32px;
-  }
-
   .feedbacks-swiper {
     margin-top: 40px;
   }
@@ -204,7 +203,7 @@
 
 @media (min-width: 1440px) {
   .feedbacks {
-    padding: 80px 32px;
+    padding-block: 80px;
   }
 
   .feedbacks-content.swiper-slide {

@@ -19,7 +19,7 @@
   --color-disabled-text: #fdf1eb;
   --color-disabled-border: #f0e2db;
 
-  padding: 32px 16px;
+  padding-block: 32px;
 }
 
 /* Прихований заголовок "Trending books" (видно тільки скрінрідерам) */
@@ -328,10 +328,6 @@
 /* ---------- Tablet: from 768px ---------- */
 
 @media (min-width: 768px) {
-  .books {
-    padding: 32px 32px;
-  }
-
   .books-inner {
     grid-template-areas:
       'head filter'
@@ -359,7 +355,7 @@
 
 @media (min-width: 1440px) {
   .books {
-    padding: 64px 64px;
+    padding-block: 64px;
   }
 
   .books-inner {

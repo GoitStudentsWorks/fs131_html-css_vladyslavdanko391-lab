@@ -1,14 +1,8 @@
 .event {
-  padding: 28px 0;
   background-color: #fff0e7;
   color: #111;
-}
-
-.event .container {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 16px;
-  box-sizing: border-box;
+  
+  padding-bottom: 64px;
 }
 
 .event .subtitle {
@@ -19,6 +13,8 @@
 }
 
 .events-title {
+  letter-spacing: -0.01em;
+  color: #0b0500;
   margin-bottom: 10px;
   font-size: 36px;
   font-weight: 600;
@@ -80,6 +76,7 @@
   margin-bottom: 3px;
   font-size: 24px;
   line-height: 1.4;
+  letter-spacing: -0.01em;
 }
 
 .events-slide__meta {
@@ -315,34 +312,12 @@
 }
 
 @media (min-width: 375px) {
-  .event .container {
-    padding-right: 20px;
-    padding-left: 20px;
-  }
-
-  .events-title {
-    font-size: 26px;
-  }
-
   .events-slider__slide img {
     height: 220px;
   }
 }
 
 @media (min-width: 768px) {
-  .event {
-    padding: 36px 0;
-  }
-
-  .event .container {
-    padding-right: 24px;
-    padding-left: 24px;
-  }
-
-  .events-title {
-    font-size: 28px;
-  }
-
   .events-slider__viewport {
     overflow-x: auto;
     overflow-y: hidden;
@@ -360,10 +335,6 @@
     height: 180px;
   }
 
-  .events-slide__title {
-    font-size: 14px;
-  }
-
   .events-slide__format,
   .events-slide__date,
   .events-slide__content {
@@ -372,10 +343,6 @@
 
   .events-btn {
     font-size: 10px;
-  }
-
-  .register-modal {
-    padding: 20px;
   }
 
   .register-modal__content {
@@ -406,10 +373,8 @@
 }
 
 @media (min-width: 1440px) {
-  .event .container {
-    max-width: 1280px;
-    padding-right: 40px;
-    padding-left: 40px;
+  .events-title {
+    font-size: 48px;
   }
 
   .events-slider__viewport {
