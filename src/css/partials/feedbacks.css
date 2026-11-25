@@ -1,0 +1,222 @@
+/* ===== CUSTOMER FEEDBACKS ===== */
+.feedbacks {
+  width: 100%;
+  padding-block: 64px;
+  background: #fceee6;
+  box-sizing: border-box;
+}
+
+.feedbacks-info {
+  margin-bottom: 80px;
+}
+
+.feedbacks-title {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 1.2;
+  margin: 0 0 24px;
+  text-align: left;
+  font-family: "Rubik", sans-serif;
+  letter-spacing: -0.01em;
+  color: #0b0500;
+}
+
+.feedbacks-subtitle {
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0;
+  text-align: left;
+}
+
+/* ===== SWIPER ===== */
+.feedbacks-swiper {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  margin-top: 32px;
+  padding: 0;
+  z-index: 1;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  margin-top: 32px;
+}
+
+.feedbacks-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+}
+
+/* ===== REVIEW CARD ===== */
+
+.feedbacks-content.swiper-slide {
+  min-width: 0;
+  height: auto;
+  min-height: 250px;
+  margin: 0;
+  padding: 24px 20px;
+  border: 1px solid #bdbdbd;
+  border-radius: 0;
+  background: transparent;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.feedbacks-text {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0 0 28px;
+  overflow-wrap: anywhere;
+}
+
+.feedbacks-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.feedbacks-avatar {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.feedbacks-user-info {
+  min-width: 0;
+}
+
+.feedbacks-name {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+
+.feedbacks-role {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+/* ===== CONTROLS ===== */
+
+.feedbacks-controls {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  gap: 16px;
+}
+
+.feedbacks-arrows {
+  display: flex;
+  gap: 10px;
+}
+
+.feedbacks-arrow {
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 0;
+  background-color: #e15d05;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    opacity 0.2s;
+}
+
+/* Hover / Focus */
+.feedbacks-arrow:not(:disabled):hover,
+.feedbacks-arrow:not(:disabled):focus-visible {
+  background-color: #fceee6;
+  color: #0b0500;
+}
+
+/* Active */
+.feedbacks-arrow:not(:disabled):active {
+  background-color: #5a2502;
+  color: #ffffff;
+}
+
+/* Disabled */
+.feedbacks-arrow:disabled,
+.feedbacks-arrow.swiper-button-disabled {
+  background-color: #e15d05;
+  color: #ffffff;
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+
+/* ===== PAGINATION ===== */
+
+.feedbacks-dots.swiper-pagination {
+  position: static;
+  width: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transform: none;
+}
+
+.feedbacks-dots .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  margin: 0;
+  background-color: #d6d6d6;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.feedbacks-dots .swiper-pagination-bullet-active {
+  background-color: #000;
+}
+
+/* ===== TABLET ===== */
+
+@media (min-width: 768px) {
+  .feedbacks-swiper {
+    margin-top: 40px;
+  }
+
+  .feedbacks-content.swiper-slide {
+    min-height: 280px;
+    padding: 28px 24px;
+  }
+}
+
+/* ===== DESKTOP ===== */
+
+@media (min-width: 1440px) {
+  .feedbacks {
+    padding-block: 80px;
+  }
+
+  .feedbacks-content.swiper-slide {
+    min-height: 300px;
+    padding: 32px 24px;
+  }
+
+  .feedbacks-text {
+    font-size: 18px;
+    margin-bottom: 36px;
+  }
+
+  .feedbacks-arrows {
+    gap: 16px;
+  }
+}

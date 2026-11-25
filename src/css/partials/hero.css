@@ -1,0 +1,260 @@
+.swiper {
+  margin-bottom: 24px;
+}
+
+.hero-img-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 343 / 199;
+}
+
+@media (min-width: 768px) {
+  .hero-img-wrapper {
+    aspect-ratio: 704 / 274;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero-img-wrapper {
+    aspect-ratio: 1312 / 395;
+  }
+}
+
+.hero-img {
+  display: block;
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-info-wrapper {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-info-wrapper {
+    bottom: 40px;
+    left: 32px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .hero-info-wrapper {
+    bottom: 56px;
+    left: 56px;
+  }
+}
+
+.hero-info {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-info {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .hero-info {
+    font-size: 52px;
+  }
+}
+
+.hero-info--first {
+  max-width: 172px;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-info--first {
+    max-width: 274px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .hero-info--first {
+    max-width: 392px;
+  }
+}
+
+.hero-info--second {
+  max-width: 160px;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-info--second {
+    max-width: 202px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .hero-info--second {
+    max-width: 392px;
+  }
+}
+
+.hero-info--third {
+  max-width: 210px;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-info--third {
+    max-width: 390px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .hero-info--third {
+    max-width: 560px;
+  }
+}
+
+.hero-info--third span {
+  display: block;
+}
+
+.hero-info--fourth {
+  max-width: 228px;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-info--fourth {
+    max-width: 390px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .hero-info--fourth {
+    max-width: 560px;
+  }
+}
+
+.hero-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e15d05;
+  border: 0.52px solid #e15d05;
+  border-radius: 2px;
+  padding: 4px 10px;
+  width: 117px;
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 1.5;
+  color: #ffffff;
+  transition:
+    background-color 0.2s linear,
+    border-color 0.2s linear;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-link {
+    font-size: 16px;
+    padding: 4px 20px;
+    width: 164px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .hero-link {
+    padding: 8px 20px;
+    width: 227px;
+  }
+}
+
+.hero-link:hover,
+.hero-link:focus {
+  background-color: #431b01;
+  border-color: #431b01;
+}
+
+.hero-link:active {
+  background-color: #b44a04;
+  border-color: #b44a04;
+}
+
+.hero-title-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-title {
+  width: 100%;
+  max-width: 330px;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: #0b0500;
+}
+
+@media (min-width: 768px) {
+  .hero-title-wrapper {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .hero-title {
+    width: 560px;
+    max-width: 560px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero-title {
+    width: fit-content;
+    max-width: none;
+    font-size: 52px;
+  }
+}
+
+.hero-navigation {
+  display: flex;
+  justify-content: end;
+  column-gap: 16px;
+  margin-bottom: 24px;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-navigation {
+    margin-bottom: 0;
+  }
+}
+
+.hero-btn {
+  border: 1px solid rgba(11, 5, 0, 0.15);
+  padding: 12px;
+  width: 48px;
+  height: 48px;
+  background-color: #e15d05;
+  transition: background-color 0.2s linear;
+}
+
+.hero-btn:hover,
+.hero-btn:focus {
+  background-color: #fceee6;
+}
+
+.hero-btn:active {
+  background-color: #5a2502;
+}
+
+.hero-btn.swiper-button-disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+.hero-btn.swiper-button-disabled:hover {
+  background-color: #e15d05;
+}

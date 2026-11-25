@@ -1,0 +1,120 @@
+.locatioText {
+    margin-bottom: 32px;
+}
+
+.location-section-label {
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.location-title {
+    margin-bottom: 24px;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+}
+
+.location-description {
+    font-size: 18px; 
+}
+
+.location-contact-info-list {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    gap: 24px;
+}
+
+.location-contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.contacts-label {
+    font-size: 20px;
+    margin-bottom: 8px;
+} 
+
+.location-map {
+    width: 100%;
+    height: 395px;
+    margin-top: 32px;
+    margin-bottom: 64px;
+}
+
+@media (min-width: 768px) {
+    .location-info {
+        display: flex;
+        flex-direction: row;
+        gap: 32px; 
+        margin-top: 64px;
+    }
+
+    .locatioText {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        width: 336px;
+    }
+
+    .location-contact-info-list {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 24px;
+        margin: 0;
+        padding: 0;
+        width: 336px;
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .contact-info p {
+    margin: 0;
+    }
+
+    .location-map {
+        max-width: 704px;
+        height: 395px;
+        margin-top: 80px;
+        margin-bottom: 64px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .location-info {
+        gap: 80px; 
+        margin-top: 80px;
+    }
+
+    .locatioText {
+        width: 732px;
+    }
+
+    .location-contact-info-list {
+        width: 500px;
+    }
+
+    .location-map {
+        max-width: 1312px;
+        height: 738px;
+        margin-top: 80px;
+        margin-bottom: 106px;    
+        overflow: hidden;
+    }
+}
+    
+
