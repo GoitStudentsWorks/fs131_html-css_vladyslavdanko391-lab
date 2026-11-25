@@ -1,16 +1,23 @@
+import { showLoader, hideLoader } from './loader.js';
 const BASE_URL = 'https://books-backend-v2.b.goit.study/books';
 
 // Один спільний запит: перевіряє відповідь і повертає JSON
 async function request(path) {
-  const response = await fetch(`${BASE_URL}${path}`);
+  showLoader();
 
-  if (!response.ok) {
-    throw new Error(
-      `Request failed: ${response.status} ${response.statusText}`,
-    );
+  try {
+    const response = await fetch(`${BASE_URL}${path}`);
+
+    if (!response.ok) {
+      throw new Error(
+        `Request failed: ${response.status} ${response.statusText}`,
+      );
+    }
+
+    return await response.json();
+  } finally {
+    hideLoader();
   }
-
-  return response.json();
 }
 
 // [{ list_name: "Business" }, ...]

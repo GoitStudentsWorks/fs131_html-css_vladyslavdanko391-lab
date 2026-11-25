@@ -34,6 +34,7 @@ import location from "../partials/location.html?raw";
 import footer from "../partials/footer.html?raw";
 import bookModal from "../partials/book-modal.html?raw";
 import contactModal from "../partials/contact-modal.html?raw";
+import loader from "../partials/loader.html?raw";
 
 import { initBooks } from "./books/init-books.js";
 import { initFeedbacks } from "./feedbacks.js";
@@ -108,6 +109,7 @@ app.innerHTML = `
   ${withIcons(footer)}
   ${bookModalHtml}
   ${withIcons(contactModal)}
+  ${loader}
 `;
 
 initBooks();
