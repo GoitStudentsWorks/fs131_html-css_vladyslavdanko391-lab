@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/booksy/',
+  base: '/fs131_html-css_vladyslavdanko391-lab/',
 });
